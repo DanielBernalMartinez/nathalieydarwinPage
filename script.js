@@ -632,21 +632,36 @@ function updateCountdown(){
    ============================================================ */
 let galleryST = null;
 function setupGalleryScroll(){
-  if(!ANIM_OK){
-    // no GSAP available — just let the track sit as a normal scrollable row
+  const track = document.getElementById('galleryTrack');
+  const isMobile = window.innerWidth <= 760;
+
+  // Mobile: pinning the section and scrubbing a huge horizontal distance via
+  // vertical scroll makes people scroll forever through a "stuck" screen.
+  // Instead, let the track be a normal swipeable horizontal row.
+  if(!ANIM_OK || isMobile){
+    if(galleryST){ galleryST.kill(); galleryST = null; }
+    if(ANIM_OK) ScrollTrigger.getAll().forEach(st=>{ if(st.vars.trigger==='#gallery') st.kill(); });
     document.querySelectorAll('.g-card').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
-    const track = document.getElementById('galleryTrack');
-    if(track) track.style.overflowX = 'auto';
+    const pinEl = document.querySelector('.gallery-pin');
+    if(pinEl){
+      pinEl.style.overflowX = 'auto';
+      pinEl.style.overflowY = 'hidden';
+      pinEl.style.scrollSnapType = 'x proximity';
+      pinEl.style.webkitOverflowScrolling = 'touch';
+      document.querySelectorAll('.g-card').forEach(c=>{ c.style.scrollSnapAlign = 'start'; });
+    }
+    if(track) track.style.transform = 'none';
     return;
   }
+
   if(galleryST) galleryST.kill();
-  const track = document.getElementById('galleryTrack');
+  track.style.overflowX = '';
   requestAnimationFrame(()=>{
     const distance = track.scrollWidth - window.innerWidth + 160;
     galleryST = gsap.to(track, {
       x: -distance, ease:'none',
       scrollTrigger:{
-        trigger:'#gallery', start:'top top', end:()=>'+='+ (distance+window.innerHeight),
+        trigger:'#gallery', start:'top top', end:()=>'+='+distance,
         scrub:0.6, pin:true, anticipatePin:1, invalidateOnRefresh:true
       }
     });
