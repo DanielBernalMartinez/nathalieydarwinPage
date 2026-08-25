@@ -13,7 +13,7 @@ const I18N = {
     "countdown.title":"El momento se acerca",
     "countdown.days":"Días","countdown.hours":"Horas","countdown.min":"Minutos","countdown.sec":"Segundos",
     "program.eyebrow":"Orden del día","program.title":"Programa","program.pm":"p.m.",
-    "program.i1":"Ceremonia","program.i2":"Recepción",
+    "program.i1":"Ceremonia","program.i2":"Recepción","program.i3":"Cena","program.i4":"Barra libre","program.i5":"Baile",
     "story.eyebrow":"Un capítulo a la vez",
     "story.title":"Nuestra Historia",
     "story.lead":"Cada año trajo algo nuevo que sostener juntos.",
@@ -24,6 +24,7 @@ const I18N = {
     "kids.title":"Lo mejor de nosotros",
     "gallery.eyebrow":"Galería",
     "gallery.title":"Momentos que atesoramos",
+    "gallery.swipeHint":"Desliza para ver más →",
     "details.eyebrow":"Los detalles",
     "details.title":"Acompáñanos",
     "details.lead":"Guarda esta información — te esperamos para celebrar juntos.",
@@ -31,7 +32,7 @@ const I18N = {
     "details.rsvpLabel":"Confirmación","details.rsvpValue":"Antes del 15 de marzo","details.rsvpSub":"Escríbenos por WhatsApp",
     "details.contactLabel":"Contacto",
     "details.ceremonyKicker":"Ceremonia","details.receptionKicker":"Recepción",
-    "details.ceremonyTime":"5:00 p.m.","details.receptionTime":"8:00 p.m.",
+    "details.ceremonyTime":"4:45 p.m.","details.receptionTime":"8:00 p.m.",
     "details.venueLogoNote":"(Aquí puedes agregar el logo oficial del lugar — no incluimos logos de terceros por derechos de marca)",
     "details.directions":"Cómo llegar",
     "rsvp.eyebrow":"Confirma tu asistencia","rsvp.title":"¿Nos acompañas?",
@@ -43,14 +44,26 @@ const I18N = {
     "rsvp.msgLabel":"Mensaje para los novios (opcional)",
     "rsvp.submit":"Enviar confirmación",
     "rsvp.note":"Se abrirá tu aplicación de correo con el mensaje ya redactado — solo debes darle enviar.",
+    "vegas.eyebrow":"El destino","vegas.title":"Nos vemos en Las Vegas",
+    "vegas.lead":"Ven un día antes, quédate uno después — Las Vegas tiene mucho más para ofrecerte que nuestra celebración. Aquí un pequeño adelanto de lo que te espera.",
+    "vegas.invite":"Haz de este viaje una escapada propia: luces, shows, buena mesa y la energía de una ciudad que nunca se apaga — todo a minutos de donde celebraremos.",
     "env.eyebrow":"Un gesto opcional","env.title":"Lluvia de Sobres",
     "env.text":"Tu presencia es el regalo más grande que podemos recibir. Si deseas tener un detalle adicional con nosotros, dispondremos de un pequeño espacio para recibir sobres el día de la celebración.",
-    "dress.eyebrow":"Código de vestimenta","dress.title":"Elegante Formal",
+    "dress.eyebrow":"Dress Code","dress.title":"Invitados",
+    "dress.formal":"Formal elegante",
+    "dress.suggestedLabel":"Colores sugeridos:","dress.suggestedNote":"tonos suaves y sofisticados.",
+    "dress.avoid":"Por favor evitar: blanco, ivory, azul royal y azul cielo, ya que están reservados para la novia y la corte.",
+    "dress.courtTitle":"La corte",
+    "dress.courtLadies":"Damas: azul royal","dress.courtMen":"Caballeros: azul marino",
+    "dress.suggestedForGuests":"Colores sugeridos para invitados",
+    "dress.c1":"Verde Oliva Suave","dress.c2":"Azul Polvoriento","dress.c3":"Lavanda Suave",
+    "dress.c4":"Rosa Empolvado","dress.c5":"Beige Arena","dress.c6":"Gris Perla",
+    "dress.thanks":"Gracias por acompañarnos en esta noche tan especial.","dress.seeyou":"¡Nos vemos en Las Vegas!",
     "dress.man":"Él","dress.manDesc":"Traje oscuro, corbata opcional",
     "dress.woman":"Ella","dress.womanDesc":"Vestido largo, tonos tierra o joya",
     "closing.eyebrow":"Con todo nuestro amor",
     "closing.text":"Diez años de risas, silencios cómplices y una familia construida a pulso. Hoy queremos celebrar contigo el amor que sigue creciendo. Gracias por caminar junto a nosotros.",
-    "footer.text":"Hecho con amor — Nathalie & Darwin, 2027"
+    "footer.text":"Hecho con amor — Darwin & Nathalie, 2027"
   },
   en:{
     "hero.eyebrow":"Vow Renewal",
@@ -61,7 +74,7 @@ const I18N = {
     "countdown.title":"The moment is near",
     "countdown.days":"Days","countdown.hours":"Hours","countdown.min":"Minutes","countdown.sec":"Seconds",
     "program.eyebrow":"Order of the day","program.title":"Program","program.pm":"pm",
-    "program.i1":"Ceremony","program.i2":"Reception",
+    "program.i1":"Ceremony","program.i2":"Reception","program.i3":"Dinner","program.i4":"Open bar","program.i5":"Dancing",
     "story.eyebrow":"One chapter at a time",
     "story.title":"Our Story",
     "story.lead":"Every year brought something new to hold together.",
@@ -72,6 +85,7 @@ const I18N = {
     "kids.title":"The best of us",
     "gallery.eyebrow":"Gallery",
     "gallery.title":"Moments we treasure",
+    "gallery.swipeHint":"Swipe to see more →",
     "details.eyebrow":"The details",
     "details.title":"Join us",
     "details.lead":"Save this information — we can't wait to celebrate with you.",
@@ -79,7 +93,7 @@ const I18N = {
     "details.rsvpLabel":"RSVP","details.rsvpValue":"By March 15","details.rsvpSub":"Message us on WhatsApp",
     "details.contactLabel":"Contact",
     "details.ceremonyKicker":"Ceremony","details.receptionKicker":"Reception",
-    "details.ceremonyTime":"5:00 pm","details.receptionTime":"8:00 pm",
+    "details.ceremonyTime":"4:45 pm","details.receptionTime":"8:00 pm",
     "details.venueLogoNote":"(You can add the venue's official logo here — we don't include third-party logos for trademark reasons)",
     "details.directions":"Get directions",
     "rsvp.eyebrow":"Confirm your attendance","rsvp.title":"Will you join us?",
@@ -91,14 +105,26 @@ const I18N = {
     "rsvp.msgLabel":"Message for the couple (optional)",
     "rsvp.submit":"Send confirmation",
     "rsvp.note":"Your email app will open with the message already written — just hit send.",
+    "vegas.eyebrow":"The destination","vegas.title":"See you in Las Vegas",
+    "vegas.lead":"Come a day early, stay a day late — Las Vegas has so much more to offer than just our celebration. Here's a little taste of what's waiting for you.",
+    "vegas.invite":"Turn this trip into a getaway of your own: lights, shows, great food, and the energy of a city that never sleeps — all minutes from where we'll be celebrating.",
     "env.eyebrow":"An optional gesture","env.title":"Envelope Shower",
     "env.text":"Your presence is the greatest gift we could ask for. If you'd like to give something extra, we'll have a small space to receive envelopes on the day of the celebration.",
-    "dress.eyebrow":"Dress code","dress.title":"Formal Elegant",
+    "dress.eyebrow":"Dress Code","dress.title":"Guests",
+    "dress.formal":"Formal Elegant",
+    "dress.suggestedLabel":"Suggested colors:","dress.suggestedNote":"soft, sophisticated tones.",
+    "dress.avoid":"Please avoid: white, ivory, royal blue and sky blue, as they're reserved for the bride and her court.",
+    "dress.courtTitle":"The Court",
+    "dress.courtLadies":"Ladies: royal blue","dress.courtMen":"Gentlemen: navy blue",
+    "dress.suggestedForGuests":"Suggested colors for guests",
+    "dress.c1":"Soft Olive Green","dress.c2":"Dusty Blue","dress.c3":"Soft Lavender",
+    "dress.c4":"Dusty Rose","dress.c5":"Sand Beige","dress.c6":"Pearl Grey",
+    "dress.thanks":"Thank you for joining us on this special night.","dress.seeyou":"See you in Las Vegas!",
     "dress.man":"Him","dress.manDesc":"Dark suit, tie optional",
     "dress.woman":"Her","dress.womanDesc":"Long dress, earth or jewel tones",
     "closing.eyebrow":"With all our love",
     "closing.text":"Ten years of laughter, quiet understanding, and a family built with care. Today we want to celebrate with you the love that keeps growing. Thank you for walking beside us.",
-    "footer.text":"Made with love — Nathalie & Darwin, 2027"
+    "footer.text":"Made with love — Darwin & Nathalie, 2027"
   }
 };
 let currentLang = 'es';
@@ -113,7 +139,7 @@ function applyLang(lang){
   document.querySelectorAll('[data-lang-btn]').forEach(el=>{
     el.classList.toggle('on', el.getAttribute('data-lang-btn')===lang);
   });
-  renderTimeline(); renderCollage(); renderKids(); renderGallery();
+  renderTimeline(); renderCollage(); renderKids(); renderGallery(); renderVegas();
 }
 document.getElementById('langToggle').addEventListener('click',()=>{
   applyLang(currentLang==='es' ? 'en' : 'es');
@@ -146,30 +172,37 @@ const stars = Array.from({length:STAR_COUNT},()=>({
   color: Math.random()<0.78 ? SPARKLE_PALETTE[0] : SPARKLE_PALETTE[1+Math.floor(Math.random()*3)]
 }));
 
-// a few constellation clusters (static-ish, gently drifting)
-const CLUSTER_COLORS = [ [184,146,90], [167,197,218], [227,170,176] ]; // gold, blue, rose
-const clusters = Array.from({length:18},(_, ci)=>{
-  const cx=Math.random(), cy=Math.random();
-  const n = 3+Math.floor(Math.random()*4);
-  const pts = Array.from({length:n},()=>({
-    x:cx+(Math.random()-0.5)*0.14,
-    y:cy+(Math.random()-0.5)*0.14
-  }));
-  pts.color = CLUSTER_COLORS[ci % CLUSTER_COLORS.length];
-  return pts;
-});
-
-let shootingStars = [];
-function spawnShootingStar(){
-  shootingStars.push({
-    x:Math.random()*0.6+0.2, y:Math.random()*0.3,
-    len:Math.random()*120+80,
-    speed:Math.random()*6+6,
-    angle:Math.PI*0.72,
-    life:0, maxLife:60
-  });
+// floating flowers — small 5-petal blossoms drifting slowly across the page,
+// replacing the old constellations. Gold / pink / blue, per the new brief.
+const FLORAL_COLORS = ['214,178,96','224,140,165','90,150,214']; // gold, pink, blue
+const petals = Array.from({length:22},(_, i)=>({
+  x:Math.random(), y:Math.random(),
+  size:Math.random()*7+7,
+  rot:Math.random()*Math.PI*2,
+  rotSpeed:(Math.random()-0.5)*0.006,
+  driftPhase:Math.random()*Math.PI*2,
+  driftSpeed:Math.random()*0.15+0.06,
+  fallSpeed:Math.random()*0.00006+0.00002,
+  color: FLORAL_COLORS[i % FLORAL_COLORS.length]
+}));
+function drawFlower(x,y,size,rot,color,alpha){
+  ctx.save();
+  ctx.translate(x,y);
+  ctx.rotate(rot);
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = `rgba(${color},0.85)`;
+  for(let p=0;p<5;p++){
+    ctx.save();
+    ctx.rotate((Math.PI*2/5)*p);
+    ctx.beginPath();
+    ctx.ellipse(0,-size*0.62,size*0.42,size*0.68,0,0,7);
+    ctx.fill();
+    ctx.restore();
+  }
+  ctx.fillStyle = `rgba(214,178,96,0.9)`;
+  ctx.beginPath(); ctx.arc(0,0,size*0.24,0,7); ctx.fill();
+  ctx.restore();
 }
-setInterval(()=>{ if(Math.random()<0.7) spawnShootingStar(); }, 2600);
 
 const NEBULA_COLORS = [
   '214,178,96',  // warm gold
@@ -189,14 +222,15 @@ let nebulae = Array.from({length:16},(_, i)=>({
   color: NEBULA_COLORS[i % NEBULA_COLORS.length]
 }));
 
-// bright gold sparkles — 4-point glints scattered across the page for extra shimmer
+// bright sparkles — gold / pink / blue glints scattered across the page
 const SPARKLE_COUNT = 130;
-const sparkles = Array.from({length:SPARKLE_COUNT},()=>({
+const SPARKLE_PALETTE2 = ['232,196,112','224,140,165','110,160,224'];
+const sparkles = Array.from({length:SPARKLE_COUNT},(_, i)=>({
   x:Math.random(), y:Math.random(),
   size:Math.random()*5+3.5,
   phase:Math.random()*Math.PI*2,
   speed:Math.random()*0.5+0.25,
-  color: Math.random()<0.65 ? '232,196,112' : '255,255,255'
+  color: SPARKLE_PALETTE2[i % SPARKLE_PALETTE2.length]
 }));
 function drawSparkle(x,y,size,alpha,color){
   ctx.save();
@@ -233,25 +267,13 @@ function draw(){
     ctx.fillRect(0,0,W,H);
   });
 
-  // constellations
-  ctx.lineWidth = 1*DPR;
-  clusters.forEach(pts=>{
-    ctx.strokeStyle = `rgba(${pts.color},0.22)`;
-    ctx.beginPath();
-    pts.forEach((p,i)=>{
-      const x=(p.x)*W + Math.sin(t*0.1+i)*3*DPR;
-      const y=(p.y)*H + Math.cos(t*0.1+i)*3*DPR;
-      if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-    });
-    ctx.stroke();
-    pts.forEach((p,i)=>{
-      const x=(p.x)*W + Math.sin(t*0.1+i)*3*DPR;
-      const y=(p.y)*H + Math.cos(t*0.1+i)*3*DPR;
-      ctx.beginPath();
-      ctx.fillStyle=`rgba(${pts.color},0.7)`;
-      ctx.arc(x,y,2*DPR,0,7);
-      ctx.fill();
-    });
+  // floating flowers — gently drifting sideways and rotating, gold/pink/blue
+  petals.forEach(pt=>{
+    pt.rot += pt.rotSpeed;
+    pt.y = (pt.y + pt.fallSpeed) % 1;
+    const dx = Math.sin(t*pt.driftSpeed+pt.driftPhase)*0.04;
+    const x = ((pt.x+dx)%1+1)%1;
+    drawFlower(x*W, pt.y*H, pt.size*DPR, pt.rot, pt.color, 0.55);
   });
 
   // stars
@@ -269,25 +291,6 @@ function draw(){
     if(pulse < 0.08) return; // mostly dormant, occasionally glints
     drawSparkle(sp.x*W, sp.y*H, sp.size*DPR, pulse*0.95, sp.color);
   });
-
-  // shooting stars
-  shootingStars.forEach(ss=>{
-    ss.life++;
-    const progress = ss.life/ss.maxLife;
-    const x = ss.x*W + Math.cos(ss.angle)*ss.speed*ss.life*DPR;
-    const y = ss.y*H + Math.sin(ss.angle)*ss.speed*ss.life*DPR;
-    const tailX = x - Math.cos(ss.angle)*ss.len*DPR;
-    const tailY = y - Math.sin(ss.angle)*ss.len*DPR;
-    const grad = ctx.createLinearGradient(x,y,tailX,tailY);
-    const a = Math.sin(progress*Math.PI)*0.8;
-    grad.addColorStop(0, `rgba(227,195,131,${a})`);
-    grad.addColorStop(1, 'rgba(227,195,131,0)');
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = 1.4*DPR;
-    ctx.beginPath();
-    ctx.moveTo(x,y); ctx.lineTo(tailX,tailY); ctx.stroke();
-  });
-  shootingStars = shootingStars.filter(ss=>ss.life<ss.maxLife);
 
   requestAnimationFrame(draw);
 }
@@ -341,11 +344,14 @@ const ICONS = {
   heart:'<svg viewBox="0 0 100 100"><path d="M50 92 C10 62 2 32 22 16 C36 4 50 12 50 30 C50 12 64 4 78 16 C98 32 90 62 50 92Z"/></svg>',
   coupe:'<svg viewBox="0 0 100 100"><path d="M20 6 Q20 44 50 50 Q80 44 80 6 Z"/><line x1="50" y1="50" x2="50" y2="86"/><line x1="30" y1="94" x2="70" y2="94"/><line x1="50" y1="86" x2="50" y2="94"/><circle cx="38" cy="20" r="2"/><circle cx="58" cy="28" r="2"/><circle cx="46" cy="34" r="2"/></svg>',
   sun:'<svg viewBox="0 0 100 100"><path d="M4 74 Q50 24 96 74"/><line x1="50" y1="4" x2="50" y2="18"/><line x1="18" y1="16" x2="27" y2="28"/><line x1="82" y1="16" x2="73" y2="28"/><line x1="4" y1="74" x2="96" y2="74"/></svg>',
-  monogram:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="39"/><text x="50" y="63" font-size="32" font-family="Great Vibes, cursive" text-anchor="middle" stroke="none" fill="var(--gold-bright)">N&amp;D</text></svg>',
+  monogram:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="39"/><text x="50" y="63" font-size="32" font-family="Great Vibes, cursive" text-anchor="middle" stroke="none" fill="var(--gold-bright)">D&amp;N</text></svg>',
   dove:'<svg viewBox="0 0 100 100"><path d="M4 58 Q30 40 48 54 Q40 26 64 12 Q54 32 66 46 Q84 40 98 58 Q72 52 58 62 Q44 72 4 58Z"/></svg>',
   family:'<svg viewBox="0 0 100 100"><circle cx="26" cy="38" r="15"/><circle cx="74" cy="38" r="15"/><circle cx="50" cy="68" r="10"/><line x1="26" y1="53" x2="26" y2="72"/><line x1="74" y1="53" x2="74" y2="72"/></svg>',
   compass:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><path d="M50 22 L58 50 L50 78 L42 50 Z"/><circle cx="50" cy="50" r="3"/></svg>',
-  candle:'<svg viewBox="0 0 100 100"><path d="M50 8 C56 20 60 26 50 32 C40 26 44 20 50 8Z"/><rect x="42" y="32" width="16" height="60" rx="2"/><line x1="30" y1="92" x2="70" y2="92"/></svg>'
+  candle:'<svg viewBox="0 0 100 100"><path d="M50 8 C56 20 60 26 50 32 C40 26 44 20 50 8Z"/><rect x="42" y="32" width="16" height="60" rx="2"/><line x1="30" y1="92" x2="70" y2="92"/></svg>',
+  skyline:'<svg viewBox="0 0 100 100"><rect x="6" y="52" width="14" height="40"/><rect x="24" y="34" width="16" height="58"/><rect x="44" y="16" width="18" height="76"/><circle cx="53" cy="10" r="4"/><rect x="66" y="42" width="14" height="50"/><rect x="82" y="58" width="12" height="34"/><line x1="2" y1="92" x2="98" y2="92"/></svg>',
+  dice:'<svg viewBox="0 0 100 100"><rect x="8" y="30" width="46" height="46" rx="6" transform="rotate(-8 31 53)"/><circle cx="22" cy="46" r="2.6" transform="rotate(-8 31 53)"/><circle cx="40" cy="60" r="2.6" transform="rotate(-8 31 53)"/><rect x="46" y="22" width="46" height="46" rx="6" transform="rotate(6 69 45)"/><circle cx="60" cy="34" r="2.6" transform="rotate(6 69 45)"/><circle cx="78" cy="34" r="2.6" transform="rotate(6 69 45)"/><circle cx="60" cy="56" r="2.6" transform="rotate(6 69 45)"/><circle cx="78" cy="56" r="2.6" transform="rotate(6 69 45)"/></svg>',
+  fountain:'<svg viewBox="0 0 100 100"><path d="M50 10 L50 30 M38 22 L50 34 L62 22 M30 34 L50 50 L70 34"/><ellipse cx="50" cy="70" rx="34" ry="10"/><rect x="34" y="70" width="32" height="16"/><ellipse cx="50" cy="86" rx="34" ry="8"/></svg>'
 };
 function artIcon(name, captionKey, tone, pos){
   const cap = ART_CAPTIONS[currentLang][captionKey] || '';
@@ -466,8 +472,8 @@ function renderGallery(){
   const poss = ['a','b','c','d'];
   // 22 real photos total, in a paced order (romance → adventure → family)
   const items = [
-    ['photo-2.jpg','p2'],['photo-15.jpg','p15'],['photo-9.jpg','p9'],['photo-6.jpg','p6'],
-    ['photo-3.jpg','p3'],['photo-4.jpg','p4'],['photo-8.jpg','p8'],['photo-10.jpg','p10'],
+    ['photo-2.jpg','p2'],['photo-15.jpg','p15'],['photo-9.jpg','p9'],
+    ['photo-3.jpg','p3'],['photo-8.jpg','p8'],['photo-10.jpg','p10'],
     ['photo-1.jpg','p1'],['photo-5.jpg','p5'],['photo-7.jpg','p7'],['photo-12.jpg','p12'],
     ['photo-13.jpg','p13'],['photo-14.jpg','p14'],['photo-11.jpg','p11'],
     ['photo-20-fam.jpg','p20'],['photo-21-fam.jpg','p21'],['photo-22-fam.jpg','p22'],
@@ -478,11 +484,57 @@ function renderGallery(){
   items.forEach(([file,cap],i)=>{
     const size = sizes[i % sizes.length];
     const pos = poss[i % poss.length];
-    html += `<div class="g-card ${size}">${artPhoto(file,cap,pos)}</div>`;
+    html += `<div class="g-tilt ${size}"><div class="g-card">${artPhoto(file,cap,pos)}<svg class="booth-flash" viewBox="0 0 20 20"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg></div></div>`;
   });
   el.innerHTML = html;
   setupGalleryScroll();
 }
+
+function renderVegas(){
+  const feature = document.getElementById('vegasFeature');
+  const strip = document.getElementById('vegasStrip');
+  if(!feature || !strip) return;
+  const capKey = k => (VEGAS_CAPTIONS[currentLang][k]||'');
+
+  feature.innerHTML = `<img src="${PHOTO_DIR}photo-29-vegas.jpg" alt="">
+    <div class="vegas-feature-text">
+      <span class="vegas-feature-kicker">${capKey('kicker')}</span>
+      <span class="vegas-feature-title">${capKey('v0')}</span>
+    </div>`;
+
+  const stripItems = [
+    ['photo-30-vegas.jpg','v1'],
+    ['photo-31-vegas.jpg','v2'],
+    ['photo-32-vegas.jpg','v3'],
+    ['photo-33-vegas.jpg','v4'],
+    ['photo-34-vegas.jpg','v5']
+  ];
+  strip.innerHTML = stripItems.map(([file,cap])=>`
+    <div class="vegas-strip-card" data-reveal>
+      <img src="${PHOTO_DIR}${file}" alt="">
+      <span class="vegas-strip-cap">${capKey(cap)}</span>
+    </div>`).join('');
+}
+const VEGAS_CAPTIONS = {
+  es:{
+    kicker:'Bienvenidos a',
+    v0:'Fabulous Las Vegas',
+    v1:'El mismo escenario donde diremos "sí"',
+    v2:'Bajo las luces, al anochecer',
+    v3:'El Strip que nunca duerme',
+    v4:'La esfera que ilumina la ciudad',
+    v5:'Vistas desde lo alto'
+  },
+  en:{
+    kicker:'Welcome to',
+    v0:'Fabulous Las Vegas',
+    v1:'The very setting where we\'ll say "I do"',
+    v2:'Under the lights, at nightfall',
+    v3:'The Strip that never sleeps',
+    v4:'The sphere lighting up the city',
+    v5:'Views from high above'
+  }
+};
 
 /* generic reveal animation for elements matching selector with [data-reveal] */
 function animateReveals(selector){
@@ -635,12 +687,20 @@ function setupGalleryScroll(){
   const track = document.getElementById('galleryTrack');
   const isMobile = window.innerWidth <= 760;
 
+  // Always fully tear down any previous gallery pin/triggers first. Renders
+  // happen again on every language switch, and stale ScrollTriggers bound to
+  // the old (now-removed) cards were causing overlapping text/disappearing
+  // photos after switching ES/EN.
+  if(galleryST){ galleryST.kill(); galleryST = null; }
+  if(ANIM_OK){ ScrollTrigger.getAll().forEach(st=>{ if(st.vars && st.vars.trigger==='#gallery') st.kill(); }); }
+  if(track) track.style.transform = 'none';
+  const pinElReset = document.querySelector('.gallery-pin');
+  if(pinElReset){ pinElReset.style.overflowX=''; pinElReset.style.overflowY=''; pinElReset.style.scrollSnapType=''; }
+
   // Mobile: pinning the section and scrubbing a huge horizontal distance via
   // vertical scroll makes people scroll forever through a "stuck" screen.
   // Instead, let the track be a normal swipeable horizontal row.
   if(!ANIM_OK || isMobile){
-    if(galleryST){ galleryST.kill(); galleryST = null; }
-    if(ANIM_OK) ScrollTrigger.getAll().forEach(st=>{ if(st.vars.trigger==='#gallery') st.kill(); });
     document.querySelectorAll('.g-card').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
     const pinEl = document.querySelector('.gallery-pin');
     if(pinEl){
@@ -654,7 +714,6 @@ function setupGalleryScroll(){
     return;
   }
 
-  if(galleryST) galleryST.kill();
   track.style.overflowX = '';
   requestAnimationFrame(()=>{
     const distance = track.scrollWidth - window.innerWidth + 160;

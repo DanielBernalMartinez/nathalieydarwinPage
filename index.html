@@ -41,13 +41,13 @@
 <div id="chapterNav">
   <button data-target="hero" class="active" aria-label="hero"></button>
   <button data-target="countdown" aria-label="countdown"></button>
-  <button data-target="program" aria-label="program"></button>
   <button data-target="story" aria-label="story"></button>
   <button data-target="family" aria-label="family"></button>
   <button data-target="kids" aria-label="kids"></button>
   <button data-target="gallery" aria-label="gallery"></button>
   <button data-target="details" aria-label="details"></button>
   <button data-target="rsvp" aria-label="rsvp"></button>
+  <button data-target="vegas" aria-label="vegas"></button>
   <button data-target="envelopes" aria-label="envelopes"></button>
   <button data-target="dresscode" aria-label="dresscode"></button>
   <button data-target="closing" aria-label="closing"></button>
@@ -94,7 +94,93 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-photo hero-photo--framed" aria-hidden="true"></div>
+    <div class="hero-frame" aria-hidden="true">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <radialGradient id="dfRoseGrad" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#fdf1e3"/>
+            <stop offset="55%" stop-color="#f0c399"/>
+            <stop offset="100%" stop-color="#d99a68"/>
+          </radialGradient>
+          <radialGradient id="dfRoseGrad2" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#fbe4e8"/>
+            <stop offset="55%" stop-color="#eab3c0"/>
+            <stop offset="100%" stop-color="#cf8a9c"/>
+          </radialGradient>
+          <linearGradient id="dfLeafGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a8bd8f"/>
+            <stop offset="100%" stop-color="#6c8354"/>
+          </linearGradient>
+        </defs>
+        <symbol id="dfRose" viewBox="-20 -20 40 40">
+          <g>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad)" transform="rotate(72)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad)" transform="rotate(144)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad)" transform="rotate(216)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad)" transform="rotate(288)"/>
+          </g>
+          <g transform="rotate(36) scale(.6)">
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad2)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad2)" transform="rotate(72)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad2)" transform="rotate(144)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad2)" transform="rotate(216)"/>
+            <ellipse rx="9" ry="5" fill="url(#dfRoseGrad2)" transform="rotate(288)"/>
+          </g>
+          <circle r="2.6" fill="#f6dcab"/>
+        </symbol>
+        <symbol id="dfLeaf" viewBox="-10 -4 20 8">
+          <path d="M-9,0 Q0,-6 9,0 Q0,6 -9,0Z" fill="url(#dfLeafGrad)"/>
+        </symbol>
+        <symbol id="dfGem" viewBox="-5 -5 10 10">
+          <path d="M0,-5 L4,-1 L0,5 L-4,-1Z" fill="#fdf6e6" stroke="var(--gold)" stroke-width=".4"/>
+        </symbol>
+      </svg>
+
+      <svg class="hf-corner hf-tl" viewBox="0 0 130 130" aria-hidden="true">
+        <use href="#dfLeaf" x="30" y="14" width="34" height="14" transform="rotate(-30 30 14)"/>
+        <use href="#dfLeaf" x="10" y="34" width="30" height="12" transform="rotate(20 10 34)"/>
+        <use href="#dfRose" x="4" y="4" width="34" height="34"/>
+        <use href="#dfRose" x="30" y="24" width="24" height="24"/>
+        <use href="#dfRose" x="14" y="42" width="20" height="20"/>
+        <use href="#dfGem" x="46" y="10" width="9" height="9"/>
+        <use href="#dfGem" x="8" y="52" width="7" height="7"/>
+      </svg>
+      <svg class="hf-corner hf-tr" viewBox="0 0 130 130" aria-hidden="true">
+        <use href="#dfLeaf" x="66" y="14" width="34" height="14" transform="rotate(30 83 14)"/>
+        <use href="#dfLeaf" x="90" y="34" width="30" height="12" transform="rotate(-20 105 34)"/>
+        <use href="#dfRose" x="92" y="4" width="34" height="34"/>
+        <use href="#dfRose" x="76" y="24" width="24" height="24"/>
+        <use href="#dfRose" x="96" y="42" width="20" height="20"/>
+        <use href="#dfGem" x="75" y="10" width="9" height="9"/>
+        <use href="#dfGem" x="115" y="52" width="7" height="7"/>
+      </svg>
+      <svg class="hf-corner hf-bl" viewBox="0 0 130 130" aria-hidden="true">
+        <use href="#dfLeaf" x="30" y="102" width="34" height="14" transform="rotate(30 30 102)"/>
+        <use href="#dfLeaf" x="10" y="82" width="30" height="12" transform="rotate(-20 10 88)"/>
+        <use href="#dfRose" x="4" y="92" width="34" height="34"/>
+        <use href="#dfRose" x="30" y="72" width="24" height="24"/>
+        <use href="#dfRose" x="14" y="58" width="20" height="20"/>
+        <use href="#dfGem" x="46" y="108" width="9" height="9"/>
+        <use href="#dfGem" x="8" y="62" width="7" height="7"/>
+      </svg>
+      <svg class="hf-corner hf-br" viewBox="0 0 130 130" aria-hidden="true">
+        <use href="#dfLeaf" x="66" y="102" width="34" height="14" transform="rotate(-30 83 102)"/>
+        <use href="#dfLeaf" x="90" y="82" width="30" height="12" transform="rotate(20 105 88)"/>
+        <use href="#dfRose" x="92" y="92" width="34" height="34"/>
+        <use href="#dfRose" x="76" y="72" width="24" height="24"/>
+        <use href="#dfRose" x="96" y="58" width="20" height="20"/>
+        <use href="#dfGem" x="75" y="108" width="9" height="9"/>
+        <use href="#dfGem" x="115" y="62" width="7" height="7"/>
+      </svg>
+
+      <svg class="hf-ribbon hf-ribbon-top" viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0 10 Q100 2 200 10 T400 10"/></svg>
+      <svg class="hf-ribbon hf-ribbon-bottom" viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0 10 Q100 18 200 10 T400 10"/></svg>
+      <svg class="hf-sparkle hf-s1" viewBox="0 0 20 20"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+      <svg class="hf-sparkle hf-s2" viewBox="0 0 20 20"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+      <svg class="hf-sparkle hf-s3" viewBox="0 0 20 20"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+    </div>
     <svg class="hero-bow hero-bow--left" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 62 M54 39 L62 62" stroke-width="1.4"/></svg>
     <svg class="hero-bow hero-bow--right" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 62 M54 39 L62 62" stroke-width="1.4"/></svg>
     <div class="hero-inner">
@@ -131,7 +217,7 @@
   <!-- COUNTDOWN -->
   <section id="countdown">
     <div class="section-photo section-photo--countdown" aria-hidden="true"></div>
-    <svg class="mini-bow" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <svg class="mini-bow mini-bow--gold" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
     <div class="eyebrow" style="text-align:center" data-i18n="countdown.eyebrow">Faltan</div>
     <h2 class="title-lg" data-i18n="countdown.title">El momento se acerca</h2>
     <div class="count-grid">
@@ -140,75 +226,16 @@
       <div class="count-unit"><span class="count-num" id="cd-min">00</span><span class="count-label" data-i18n="countdown.min">Minutos</span></div>
       <div class="count-unit"><span class="count-num" id="cd-sec">00</span><span class="count-label" data-i18n="countdown.sec">Segundos</span></div>
     </div>
-    <svg class="constellation-divider" viewBox="0 0 340 46"><path d="M10 30 L90 12 L170 34 L250 10 L330 28"/><circle cx="10" cy="30" r="2.4"/><circle cx="90" cy="12" r="2.4" fill="var(--terracotta)"/><circle cx="170" cy="34" r="2.4"/><circle cx="250" cy="10" r="2.4" fill="var(--dusty-blue)"/><circle cx="330" cy="28" r="2.4"/></svg>
+    <svg class="floral-divider" viewBox="0 0 340 46"><line x1="10" y1="23" x2="140" y2="23"/><line x1="200" y1="23" x2="330" y2="23"/>
+      <g transform="translate(170,23)"><circle r="2.6" fill="var(--gold-bright)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(288)"/></g>
+      <g transform="translate(90,23) scale(.6)"><circle r="2.6" fill="var(--rose)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(288)"/></g>
+      <g transform="translate(250,23) scale(.6)"><circle r="2.6" fill="var(--baby-blue)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(288)"/></g>
+    </svg>
   </section>
 
   <!-- PROGRAM -->
-  <section id="program">
-    <div class="eyebrow" style="text-align:center" data-i18n="program.eyebrow">Orden del día</div>
-    <h2 class="title-lg" data-i18n="program.title">Programa</h2>
-    <div class="program-frame" data-reveal>
-      <svg class="frame-flower fc-tl" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20,20)"><circle r="3"/><ellipse rx="7" ry="3.2"/><ellipse rx="7" ry="3.2" transform="rotate(72)"/><ellipse rx="7" ry="3.2" transform="rotate(144)"/><ellipse rx="7" ry="3.2" transform="rotate(216)"/><ellipse rx="7" ry="3.2" transform="rotate(288)"/></g></svg>
-      <svg class="frame-bow fc-tr" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/></svg>
-      <svg class="frame-bow fc-bl" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/></svg>
-      <svg class="frame-flower fc-br" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20,20)"><circle r="3"/><ellipse rx="7" ry="3.2"/><ellipse rx="7" ry="3.2" transform="rotate(72)"/><ellipse rx="7" ry="3.2" transform="rotate(144)"/><ellipse rx="7" ry="3.2" transform="rotate(216)"/><ellipse rx="7" ry="3.2" transform="rotate(288)"/></g></svg>
-      <svg class="frame-sparkle fs-1" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
-      <svg class="frame-sparkle fs-2" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
-      <div class="program-list">
-        <div class="program-item" data-reveal>
-          <span class="program-time">5:00 <small data-i18n="program.pm">p.m.</small></span>
-          <span class="program-line"></span>
-          <span class="program-name" data-i18n="program.i1">Ceremonia</span>
-        </div>
-        <div class="program-item" data-reveal>
-          <span class="program-time">8:00 <small data-i18n="program.pm">p.m.</small></span>
-          <span class="program-line"></span>
-          <span class="program-name" data-i18n="program.i2">Recepción</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="story">
-    <svg class="mini-bow mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
-    <div class="eyebrow eyebrow--rose" style="text-align:center" data-i18n="story.eyebrow">Un capítulo a la vez</div>
-    <h2 class="title-lg" data-i18n="story.title">Nuestra Historia</h2>
-    <div class="story-narrative" id="storyNarrative"></div>
-  </section>
-
-  <!-- FAMILY -->
-  <section id="family">
-    <svg class="mini-bow" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
-    <div class="eyebrow" style="text-align:center" data-i18n="family.eyebrow">Más que dos</div>
-    <h2 class="title-lg" data-i18n="family.title">El amor que creció en familia</h2>
-    <div class="family-text">
-      <p class="lead" data-i18n="family.lead">Lo que empezó entre dos personas se convirtió, con los años, en un hogar. Hoy no solo renovamos una promesa: celebramos la familia que construimos para sostenerla.</p>
-    </div>
-    <div class="collage" id="collage"></div>
-  </section>
-
-  <!-- KIDS -->
-  <section id="kids">
-    <svg class="mini-bow" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
-    <div class="eyebrow eyebrow--blue" style="text-align:center" data-i18n="kids.eyebrow">Nuestros Hijos</div>
-    <h2 class="title-lg" data-i18n="kids.title">Lo mejor de nosotros</h2>
-    <div class="kids-grid" id="kidsGrid"></div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="gallery-pin">
-      <div class="gallery-head">
-        <div class="eyebrow" data-i18n="gallery.eyebrow">Galería</div>
-        <h2 class="title-lg" style="text-align:left" data-i18n="gallery.title">Momentos que atesoramos</h2>
-        <p class="gallery-swipe-hint" data-i18n="gallery.swipeHint">Desliza para ver más →</p>
-      </div>
-      <div class="gallery-track" id="galleryTrack"></div>
-    </div>
-  </section>
-
-  <!-- DETAILS -->
   <section id="details">
-    <svg class="mini-bow mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <svg class="mini-bow mini-bow--pink" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
     <div class="eyebrow" style="text-align:center" data-i18n="details.eyebrow">Los detalles</div>
     <h2 class="title-lg" data-i18n="details.title">Acompáñanos</h2>
     <p class="lead" data-i18n="details.lead">Guarda esta información — te esperamos para celebrar juntos.</p>
@@ -235,13 +262,53 @@
       </div>
     </div>
 
+    <div class="program-subhead" data-reveal>
+      <div class="eyebrow" style="text-align:center" data-i18n="program.eyebrow">Orden del día</div>
+      <h3 class="title-md" data-i18n="program.title">Programa</h3>
+    </div>
+    <div class="program-frame" data-reveal>
+      <svg class="frame-flower fc-tl" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20,20)"><circle r="3"/><ellipse rx="7" ry="3.2"/><ellipse rx="7" ry="3.2" transform="rotate(72)"/><ellipse rx="7" ry="3.2" transform="rotate(144)"/><ellipse rx="7" ry="3.2" transform="rotate(216)"/><ellipse rx="7" ry="3.2" transform="rotate(288)"/></g></svg>
+      <svg class="frame-bow fc-tr" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/></svg>
+      <svg class="frame-bow fc-bl" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/></svg>
+      <svg class="frame-flower fc-br" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20,20)"><circle r="3"/><ellipse rx="7" ry="3.2"/><ellipse rx="7" ry="3.2" transform="rotate(72)"/><ellipse rx="7" ry="3.2" transform="rotate(144)"/><ellipse rx="7" ry="3.2" transform="rotate(216)"/><ellipse rx="7" ry="3.2" transform="rotate(288)"/></g></svg>
+      <svg class="frame-sparkle fs-1" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+      <svg class="frame-sparkle fs-2" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+      <div class="program-list">
+        <div class="program-item" data-reveal>
+          <span class="program-time">4:45 <small data-i18n="program.pm">p.m.</small></span>
+          <span class="program-line"></span>
+          <span class="program-name"><span data-i18n="program.i1">Ceremonia</span><small class="program-venue">Caesars Palace</small></span>
+        </div>
+        <div class="program-item" data-reveal>
+          <span class="program-time">8:00 <small data-i18n="program.pm">p.m.</small></span>
+          <span class="program-line"></span>
+          <span class="program-name"><span data-i18n="program.i2">Recepción</span><small class="program-venue">Rainbow Gardens</small></span>
+        </div>
+        <div class="program-item" data-reveal>
+          <span class="program-time program-time--sub"></span>
+          <span class="program-line"></span>
+          <span class="program-name" data-i18n="program.i3">Cena</span>
+        </div>
+        <div class="program-item" data-reveal>
+          <span class="program-time program-time--sub"></span>
+          <span class="program-line"></span>
+          <span class="program-name" data-i18n="program.i4">Barra libre</span>
+        </div>
+        <div class="program-item" data-reveal>
+          <span class="program-time program-time--sub"></span>
+          <span class="program-line"></span>
+          <span class="program-name" data-i18n="program.i5">Baile</span>
+        </div>
+      </div>
+    </div>
+
     <div class="venues-grid">
       <div class="venue-card" data-reveal>
-        <div class="venue-photo venue-photo--caesars" aria-hidden="true"></div>
+        <img class="venue-banner" src="photos/photo-17-caesars.jpg" alt="Caesars Palace">
         <div class="venue-kicker" data-i18n="details.ceremonyKicker">Ceremonia</div>
         <div class="venue-name">Caesars Palace <span class="venue-sub">— Juno Garden</span></div>
         <p class="venue-note" data-i18n="details.venueLogoNote">(Aquí puedes agregar el logo oficial del lugar — no incluimos logos de terceros por derechos de marca)</p>
-        <p class="venue-time" data-i18n="details.ceremonyTime">5:00 p.m.</p>
+        <p class="venue-time" data-i18n="details.ceremonyTime">4:45 p.m.</p>
         <p class="venue-address">3570 Las Vegas Blvd. South<br>Las Vegas, NV 89109</p>
         <div class="map-frame-outer" data-reveal>
           <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Caesars+Palace+3570+Las+Vegas+Blvd+South+Las+Vegas+NV+89109&output=embed" title="Caesars Palace"></iframe>
@@ -249,7 +316,7 @@
         <a class="directions-btn" data-i18n="details.directions" href="https://www.google.com/maps/dir/?api=1&destination=Caesars+Palace+3570+Las+Vegas+Blvd+South+Las+Vegas+NV+89109" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
       <div class="venue-card" data-reveal>
-        <div class="venue-photo venue-photo--garden" aria-hidden="true"></div>
+        <img class="venue-banner" src="photos/photo-18-garden.jpg" alt="Rainbow Gardens">
         <div class="venue-kicker" data-i18n="details.receptionKicker">Recepción</div>
         <div class="venue-name">Rainbow Gardens</div>
         <p class="venue-time" data-i18n="details.receptionTime">8:00 p.m.</p>
@@ -261,10 +328,47 @@
       </div>
     </div>
   </section>
+  <section id="story">
+    <svg class="mini-bow mini-bow--pink mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <div class="eyebrow eyebrow--rose" style="text-align:center" data-i18n="story.eyebrow">Un capítulo a la vez</div>
+    <h2 class="title-lg" data-i18n="story.title">Nuestra Historia</h2>
+    <div class="story-narrative" id="storyNarrative"></div>
+  </section>
+
+  <!-- FAMILY -->
+  <section id="family">
+    <svg class="mini-bow mini-bow--blue" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <div class="eyebrow" style="text-align:center" data-i18n="family.eyebrow">Más que dos</div>
+    <h2 class="title-lg" data-i18n="family.title">El amor que creció en familia</h2>
+    <div class="family-text">
+      <p class="lead" data-i18n="family.lead">Lo que empezó entre dos personas se convirtió, con los años, en un hogar. Hoy no solo renovamos una promesa: celebramos la familia que construimos para sostenerla.</p>
+    </div>
+    <div class="collage" id="collage"></div>
+  </section>
+
+  <!-- KIDS -->
+  <section id="kids">
+    <svg class="mini-bow mini-bow--gold" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <div class="eyebrow eyebrow--blue" style="text-align:center" data-i18n="kids.eyebrow">Nuestros Hijos</div>
+    <h2 class="title-lg" data-i18n="kids.title">Lo mejor de nosotros</h2>
+    <div class="kids-grid" id="kidsGrid"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="gallery-pin">
+      <div class="gallery-head">
+        <div class="eyebrow" data-i18n="gallery.eyebrow">Galería</div>
+        <h2 class="title-lg" style="text-align:left" data-i18n="gallery.title">Momentos que atesoramos</h2>
+        <p class="gallery-swipe-hint" data-i18n="gallery.swipeHint">Desliza para ver más →</p>
+      </div>
+      <div class="gallery-track" id="galleryTrack"></div>
+    </div>
+  </section>
 
   <!-- RSVP -->
   <section id="rsvp">
-    <svg class="mini-bow" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <svg class="mini-bow mini-bow--blue" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
     <div class="eyebrow eyebrow--blue" style="text-align:center" data-i18n="rsvp.eyebrow">Confirma tu asistencia</div>
     <h2 class="title-lg" data-i18n="rsvp.title">¿Nos acompañas?</h2>
     <p class="lead" data-i18n="rsvp.lead">Completa este formulario y se abrirá tu correo con todo listo para enviarnos tu confirmación.</p>
@@ -296,49 +400,93 @@
     </form>
   </section>
 
+  <!-- DESTINATION -->
+  <section id="vegas">
+    <svg class="mini-bow mini-bow--blue" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <div class="eyebrow eyebrow--rose" style="text-align:center" data-i18n="vegas.eyebrow">El destino</div>
+    <h2 class="title-lg" data-i18n="vegas.title">Nos vemos en Las Vegas</h2>
+    <p class="lead" data-i18n="vegas.lead">Ven un día antes, quédate uno después — Las Vegas tiene mucho más para ofrecerte que nuestra celebración. Aquí un pequeño adelanto de lo que te espera.</p>
+    <div class="vegas-feature" id="vegasFeature" data-reveal></div>
+    <div class="vegas-strip" id="vegasStrip"></div>
+    <p class="vegas-invite" data-i18n="vegas.invite">Haz de este viaje una escapada propia: luces, shows, buena mesa y la energía de una ciudad que nunca se apaga — todo a minutos de donde celebraremos.</p>
+  </section>
+
   <!-- GIFT ENVELOPES -->
   <section id="envelopes">
-    <svg class="mini-bow mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <svg class="mini-bow mini-bow--gold mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
     <div class="eyebrow eyebrow--sage" style="text-align:center" data-i18n="env.eyebrow">Un gesto opcional</div>
     <h2 class="title-lg" data-i18n="env.title">Lluvia de Sobres</h2>
     <div class="envelope-wrap">
-      <svg class="envelope-icon" viewBox="0 0 100 70" fill="none" stroke="var(--gold)" stroke-width="1.2">
-        <rect x="3" y="3" width="94" height="64" rx="2"/>
-        <path d="M3 6 L50 42 L97 6"/>
-      </svg>
+      <div class="envelope-scene">
+        <svg class="envelope-icon" viewBox="0 0 100 70">
+          <rect x="3" y="3" width="94" height="64" rx="3" fill="var(--marfil)" stroke="var(--gold)" stroke-width="1.2"/>
+          <path d="M3 6 L50 42 L97 6" fill="none" stroke="var(--gold)" stroke-width="1.2"/>
+          <g transform="translate(50,38)">
+            <g class="env-seal">
+              <circle r="9" fill="var(--rose)"/>
+              <path d="M-3 -1 C-3 -4 1 -4 0 -1 C-1 -4 3 -4 3 -1 C3 2 0 4 0 4 C0 4 -3 2 -3 -1 Z" fill="#fff" opacity=".9"/>
+            </g>
+          </g>
+        </svg>
+        <svg class="env-sparkle env-s1" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+        <svg class="env-sparkle env-s2" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+        <svg class="env-sparkle env-s3" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 L10 8 M10 12 L10 18 M2 10 L8 10 M12 10 L18 10"/></svg>
+      </div>
       <p class="lead" data-i18n="env.text">Tu presencia es el regalo más grande que podemos recibir. Si deseas tener un detalle adicional con nosotros, dispondremos de un pequeño espacio para recibir sobres el día de la celebración.</p>
     </div>
   </section>
 
   <!-- DRESS CODE -->
   <section id="dresscode">
-    <svg class="mini-bow" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
-    <div class="eyebrow" style="text-align:center" data-i18n="dress.eyebrow">Código de vestimenta</div>
-    <h2 class="title-lg" data-i18n="dress.title">Elegante Formal</h2>
-    <div class="dress-grid">
-      <div class="dress-figure" data-reveal>
-        <svg viewBox="0 0 110 220"><path d="M55 10c8 0 14 6 14 14s-6 14-14 14-14-6-14-14 6-14 14-14z"/><path d="M35 44l20 12 20-12 10 8-14 14 4 60h-40l4-60-14-14z"/><path d="M45 56l10 6 10-6"/><line x1="55" y1="128" x2="55" y2="210"/><line x1="45" y1="128" x2="38" y2="210"/><line x1="65" y1="128" x2="72" y2="210"/></svg>
-        <h3 data-i18n="dress.man">Él</h3>
-        <p data-i18n="dress.manDesc">Traje oscuro, corbata opcional</p>
+    <div class="dresscode-card" data-reveal>
+      <div class="dc-photo">
+        <img class="dc-skyline" src="photos/photo-32-vegas.jpg" alt="">
+        <img class="dc-couple" src="photos/foto- dresscode.png" alt="">
       </div>
-      <div class="dress-figure" data-reveal>
-        <svg viewBox="0 0 110 220"><path d="M55 10c8 0 14 6 14 14s-6 14-14 14-14-6-14-14 6-14 14-14z"/><path d="M40 44l15 14 15-14 12 20-10 8-4-10-2 8 6 100H43l6-100-2-8-4 10-10-8z"/></svg>
-        <h3 data-i18n="dress.woman">Ella</h3>
-        <p data-i18n="dress.womanDesc">Vestido largo, tonos tierra o joya</p>
+      <div class="dc-content">
+        <div class="dc-eyebrow" data-i18n="dress.eyebrow">Dress Code</div>
+        <div class="dc-heart">♡</div>
+        <h2 class="dc-script" data-i18n="dress.title">Invitados</h2>
+        <div class="dc-flourish">§</div>
+
+        <h3 class="dc-formal" data-i18n="dress.formal">Formal elegante</h3>
+        <p class="dc-line" data-i18n="dress.suggestedLabel">Colores sugeridos:</p>
+        <p class="dc-line dc-line--soft" data-i18n="dress.suggestedNote">tonos suaves y sofisticados.</p>
+
+        <div class="dc-divider"></div>
+
+        <p class="dc-avoid" data-i18n="dress.avoid">Por favor evitar: blanco, ivory, azul royal y azul cielo, ya que están reservados para la novia y la corte.</p>
+
+        <div class="dc-court-title" data-i18n="dress.courtTitle">La corte</div>
+        <p class="dc-line" data-i18n="dress.courtLadies">Damas: azul royal</p>
+        <p class="dc-line" data-i18n="dress.courtMen">Caballeros: azul marino</p>
+
+        <div class="swatch-label" data-i18n="dress.suggestedForGuests">Colores sugeridos para invitados</div>
+        <div class="palette-row palette-row--labeled">
+          <div class="swatch"><span style="background:#9ea081"></span><small data-i18n="dress.c1">Verde Oliva Suave</small></div>
+          <div class="swatch"><span style="background:#9fb4cf"></span><small data-i18n="dress.c2">Azul Polvoriento</small></div>
+          <div class="swatch"><span style="background:#c5b7d9"></span><small data-i18n="dress.c3">Lavanda Suave</small></div>
+          <div class="swatch"><span style="background:#e0b8bc"></span><small data-i18n="dress.c4">Rosa Empolvado</small></div>
+          <div class="swatch"><span style="background:#dcc7a6"></span><small data-i18n="dress.c5">Beige Arena</small></div>
+          <div class="swatch"><span style="background:#e0dcd6"></span><small data-i18n="dress.c6">Gris Perla</small></div>
+        </div>
+
+        <p class="dc-thanks" data-i18n="dress.thanks">Gracias por acompañarnos en esta noche tan especial.<br><em data-i18n="dress.seeyou">¡Nos vemos en Las Vegas!</em></p>
       </div>
-    </div>
-    <div class="palette-row" style="margin-top:2.5rem">
-      <span style="background:#8a7250"></span><span style="background:#c9a06a"></span><span style="background:#5c4a3a"></span><span style="background:#3d3b46"></span><span style="background:#7a2e2e"></span>
     </div>
   </section>
 
   <!-- CLOSING -->
   <section id="closing">
-    <svg class="mini-bow mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
+    <svg class="mini-bow mini-bow--blue mini-bow--flip" viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35 C50 20 30 10 15 18 C5 24 5 40 18 44 C30 48 45 44 50 35 Z"/><path d="M50 35 C50 20 70 10 85 18 C95 24 95 40 82 44 C70 48 55 44 50 35 Z"/><circle cx="50" cy="35" r="5"/><path d="M46 39 L38 55 M54 39 L62 55" stroke-width="1.4"/></svg>
     <div class="eyebrow" data-i18n="closing.eyebrow">Con todo nuestro amor</div>
     <p class="closing-text" data-i18n="closing.text">Diez años de risas, silencios cómplices y una familia construida a pulso. Hoy queremos celebrar contigo el amor que sigue creciendo. Gracias por caminar junto a nosotros.</p>
     <div class="closing-names script">Darwin &amp; Nathalie</div>
-    <svg class="constellation-divider" viewBox="0 0 340 46" style="margin-top:2.5rem"><path d="M10 20 L90 34 L170 12 L250 30 L330 14"/><circle cx="10" cy="20" r="2.4" fill="var(--rose)"/><circle cx="90" cy="34" r="2.4"/><circle cx="170" cy="12" r="2.4" fill="var(--baby-blue)"/><circle cx="250" cy="30" r="2.4"/><circle cx="330" cy="14" r="2.4" fill="var(--rose)"/></svg>
+    <svg class="floral-divider" viewBox="0 0 340 46" style="margin-top:2.5rem"><line x1="10" y1="23" x2="140" y2="23"/><line x1="200" y1="23" x2="330" y2="23"/>
+      <g transform="translate(170,23)"><circle r="2.6" fill="var(--gold-bright)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--gold)" transform="rotate(288)"/></g>
+      <g transform="translate(90,23) scale(.6)"><circle r="2.6" fill="var(--baby-blue)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--baby-blue)" transform="rotate(288)"/></g>
+      <g transform="translate(250,23) scale(.6)"><circle r="2.6" fill="var(--rose)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(72)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(144)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(216)"/><ellipse rx="6" ry="3" fill="none" stroke="var(--rose)" transform="rotate(288)"/></g>
+    </svg>
   </section>
 
   <footer data-i18n="footer.text">Hecho con amor — Darwin &amp; Nathalie, 2027</footer>
