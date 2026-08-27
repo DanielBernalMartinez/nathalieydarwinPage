@@ -971,3 +971,33 @@ footer{
   max-width: 100% !important;
   width: auto !important;
 }
+/* Contenedor del título */
+.section-header {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 2rem 0 1.5rem 0 !important;
+}
+
+/* Subtítulo pequeño (Dress Code / Código de vestimenta) */
+.section-header .section-eyebrow,
+.section-header [data-i18n="dress.eyebrow"] {
+  color: #c59b27 !important; /* Dorado del sitio */
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  font-size: 0.85rem !important;
+  font-style: italic !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Título principal (Invitados) */
+.section-header .section-title,
+.section-header [data-i18n="dress.title"] {
+  font-size: 2.2rem !important;
+  font-weight: 300 !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+}
