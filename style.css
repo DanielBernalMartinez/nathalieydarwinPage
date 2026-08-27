@@ -1001,3 +1001,38 @@ footer{
   color: #1a1a1a !important;
   margin: 0 !important;
 }
+/* Contenedor del título centrado */
+.section-header {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 2.5rem 0 1.5rem 0 !important;
+}
+
+/* Título principal (Código de vestimenta) - GRANDE */
+.section-header .section-title,
+.section-header [data-i18n="dress.eyebrow"] {
+  font-size: 2.2rem !important;
+  font-weight: 300 !important;
+  color: #1a1a1a !important;
+  margin: 0 0 0.4rem 0 !important;
+}
+
+/* Subtítulo secundario (Invitados) - PEQUEÑO Y DORADO */
+.section-header .section-eyebrow,
+.section-header [data-i18n="dress.title"] {
+  color: #c59b27 !important; /* Dorado elegante */
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  font-size: 0.85rem !important;
+  font-style: italic !important;
+  margin: 0 !important;
+  display: block !important;
+}
+.venue-name-juno {
+  font-size: 2.2rem !important; /* Ajusta el valor según qué tan grande lo prefieras */
+  font-weight: 400;
+  margin: 0.4rem 0 1rem 0;
+}
