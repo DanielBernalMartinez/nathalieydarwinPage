@@ -168,41 +168,8 @@ const stars = Array.from({length:STAR_COUNT},()=>({
   r:Math.random()*1.4+0.3,
   phase:Math.random()*Math.PI*2,
   speed:Math.random()*0.6+0.2,
-  // mostly soft ink flecks, a handful in gold/blue/rose for a little sparkle
   color: Math.random()<0.78 ? SPARKLE_PALETTE[0] : SPARKLE_PALETTE[1+Math.floor(Math.random()*3)]
 }));
-
-// floating flowers — small 5-petal blossoms drifting slowly across the page,
-// replacing the old constellations. Gold / pink / blue, per the new brief.
-const FLORAL_COLORS = ['214,178,96','224,140,165','90,150,214']; // gold, pink, blue
-const petals = Array.from({length:12},(_, i)=>({
-  x:Math.random(), y:Math.random(),
-  size:Math.random()*5+5,
-  rot:Math.random()*Math.PI*2,
-  rotSpeed:(Math.random()-0.5)*0.006,
-  driftPhase:Math.random()*Math.PI*2,
-  driftSpeed:Math.random()*0.15+0.06,
-  fallSpeed:Math.random()*0.00006+0.00002,
-  color: FLORAL_COLORS[i % FLORAL_COLORS.length]
-}));
-function drawFlower(x,y,size,rot,color,alpha){
-  ctx.save();
-  ctx.translate(x,y);
-  ctx.rotate(rot);
-  ctx.globalAlpha = alpha;
-  ctx.fillStyle = `rgba(${color},0.85)`;
-  for(let p=0;p<5;p++){
-    ctx.save();
-    ctx.rotate((Math.PI*2/5)*p);
-    ctx.beginPath();
-    ctx.ellipse(0,-size*0.62,size*0.42,size*0.68,0,0,7);
-    ctx.fill();
-    ctx.restore();
-  }
-  ctx.fillStyle = `rgba(214,178,96,0.9)`;
-  ctx.beginPath(); ctx.arc(0,0,size*0.24,0,7); ctx.fill();
-  ctx.restore();
-}
 
 const NEBULA_COLORS = [
   '214,178,96',  // warm gold
@@ -232,6 +199,7 @@ const sparkles = Array.from({length:SPARKLE_COUNT},(_, i)=>({
   speed:Math.random()*0.5+0.25,
   color: SPARKLE_PALETTE2[i % SPARKLE_PALETTE2.length]
 }));
+
 function drawSparkle(x,y,size,alpha,color){
   ctx.save();
   ctx.translate(x,y);
@@ -265,15 +233,6 @@ function draw(){
     g.addColorStop(1,   `rgba(${n.color},0)`);
     ctx.fillStyle = g;
     ctx.fillRect(0,0,W,H);
-  });
-
-  // floating flowers — gently drifting sideways and rotating, gold/pink/blue
-  petals.forEach(pt=>{
-    pt.rot += pt.rotSpeed;
-    pt.y = (pt.y + pt.fallSpeed) % 1;
-    const dx = Math.sin(t*pt.driftSpeed+pt.driftPhase)*0.04;
-    const x = ((pt.x+dx)%1+1)%1;
-    drawFlower(x*W, pt.y*H, pt.size*DPR, pt.rot, pt.color, 0.32);
   });
 
   // stars
@@ -318,8 +277,7 @@ try{
   ANIM_OK = false;
   console.warn('Animation libraries failed to load — showing content without animation.', e);
 }
-// if GSAP/ScrollTrigger/Lenis didn't load (blocked CDN, offline, etc.), make sure
-// every scroll-reveal element is still visible instead of stuck at opacity:0
+
 function forceRevealEverything(){
   document.querySelectorAll(
     '[data-reveal], .frame, .kid-card, .g-card, .detail-card, .dress-figure, '+
@@ -332,11 +290,6 @@ if(!ANIM_OK) console.warn('Falling back to a static (non-animated) layout.');
 /* ============================================================
    4. CONTENT RENDERERS (story / kids / gallery / collage captions)
    ============================================================ */
-/* ------------------------------------------------------------
-   ARTWORK SET — minimalist gold line-art used as stand-ins for
-   real photography. Fully illustrated (no real people), so it's
-   safe to ship as a demo and trivial to swap for real photos later.
-   ------------------------------------------------------------ */
 const ICONS = {
   rings:'<svg viewBox="0 0 100 100"><circle cx="38" cy="55" r="20"/><circle cx="62" cy="55" r="20"/></svg>',
   wreath:'<svg viewBox="0 0 100 100"><path d="M50 10 C20 14 10 45 20 68 C28 86 45 92 50 92 C55 92 72 86 80 68 C90 45 80 14 50 10 Z"/><path d="M50 10 Q46 40 50 70"/><ellipse cx="30" cy="30" rx="6" ry="3" transform="rotate(30 30 30)"/><ellipse cx="24" cy="48" rx="6" ry="3" transform="rotate(60 24 48)"/><ellipse cx="30" cy="66" rx="6" ry="3" transform="rotate(100 30 66)"/><ellipse cx="70" cy="30" rx="6" ry="3" transform="rotate(-30 70 30)"/><ellipse cx="76" cy="48" rx="6" ry="3" transform="rotate(-60 76 48)"/><ellipse cx="70" cy="66" rx="6" ry="3" transform="rotate(-100 70 66)"/></svg>',
@@ -357,7 +310,7 @@ function artIcon(name, captionKey, tone, pos){
   const cap = ART_CAPTIONS[currentLang][captionKey] || '';
   return `<div class="art-frame tone-${tone} pos-${pos}">${ICONS[name]}<span class="art-caption"><span class="cap-rule"></span><span class="cap-text">${cap}</span></span></div>`;
 }
-// real photos you shared — filenames live in the /photos folder next to index.html
+
 const PHOTO_DIR = 'photos/';
 function artPhoto(file, captionKey, pos){
   const cap = ART_CAPTIONS[currentLang][captionKey] || '';
@@ -387,7 +340,6 @@ const ART_CAPTIONS = {
 };
 function renderCollage(){
   const el = document.getElementById('collage');
-  // family-focused shots for the "grew into family" section
   const map = [
     ['f1','photo-7.jpg','p7','a'],['f2','photo-11.jpg','p11','b'],['f3','photo-13.jpg','p13','d'],
     ['f4','photo-12.jpg','p12','c'],['f5','photo-14.jpg','p14','c']
@@ -455,9 +407,6 @@ function renderTimeline(){
 
 function renderKids(){
   const el = document.getElementById('kidsGrid');
-  // real names/descriptions removed until you share the actual info —
-  // these are just clean photo frames for now (family group shots, since no
-  // solo portraits were provided). Swap photos and add names when ready.
   const cfg = ['photo-19-kids.jpg','photo-14.jpg'];
   el.innerHTML = cfg.map(file=>`
     <div class="kid-card" data-reveal>
@@ -470,7 +419,6 @@ function renderGallery(){
   const el = document.getElementById('galleryTrack');
   const sizes = ['g-tall','g-wide','g-square'];
   const poss = ['a','b','c','d'];
-  // 22 real photos total, in a paced order (romance → adventure → family)
   const items = [
     ['photo-2.jpg','p2'],['photo-15.jpg','p15'],['photo-9.jpg','p9'],
     ['photo-3.jpg','p3'],['photo-8.jpg','p8'],['photo-10.jpg','p10'],
@@ -602,14 +550,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
         navBtnsA.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
       }
 
-      // ---- reliability net against "blank sections" ----
-      // web fonts swap in asynchronously and change text height, which shifts
-      // every section below it — recalc trigger positions once that settles.
       if(document.fonts && document.fonts.ready){
         document.fonts.ready.then(()=> ScrollTrigger.refresh());
       }
       window.addEventListener('load', ()=> ScrollTrigger.refresh());
-      // final safety pass once everything (images, pin spacers, fonts) has settled
       setTimeout(()=> ScrollTrigger.refresh(), 800);
     }catch(e){
       console.warn('Animation setup failed — showing content without animation.', e);
@@ -619,7 +563,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     forceRevealEverything();
   }
 
-  // chapter nav click-to-scroll always works, animated or not
   document.querySelectorAll('#chapterNav button').forEach(b=>{
     b.addEventListener('click',()=>{
       const target = document.getElementById(b.dataset.target);
@@ -627,12 +570,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
     });
   });
 
-  // countdown — always runs regardless of animation support
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // RSVP form — no backend on a static site, so we build a pre-filled
-  // mailto: draft and hand it to the guest's own email app to send
   const rsvpForm = document.getElementById('rsvpForm');
   if(rsvpForm){
     rsvpForm.addEventListener('submit', (e)=>{
@@ -687,19 +627,12 @@ function setupGalleryScroll(){
   const track = document.getElementById('galleryTrack');
   const isMobile = window.innerWidth <= 760;
 
-  // Always fully tear down any previous gallery pin/triggers first. Renders
-  // happen again on every language switch, and stale ScrollTriggers bound to
-  // the old (now-removed) cards were causing overlapping text/disappearing
-  // photos after switching ES/EN.
   if(galleryST){ galleryST.kill(); galleryST = null; }
   if(ANIM_OK){ ScrollTrigger.getAll().forEach(st=>{ if(st.vars && st.vars.trigger==='#gallery') st.kill(); }); }
   if(track) track.style.transform = 'none';
   const pinElReset = document.querySelector('.gallery-pin');
   if(pinElReset){ pinElReset.style.overflowX=''; pinElReset.style.overflowY=''; pinElReset.style.scrollSnapType=''; }
 
-  // Mobile: pinning the section and scrubbing a huge horizontal distance via
-  // vertical scroll makes people scroll forever through a "stuck" screen.
-  // Instead, let the track be a normal swipeable horizontal row.
   if(!ANIM_OK || isMobile){
     document.querySelectorAll('.g-card').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
     const pinEl = document.querySelector('.gallery-pin');
@@ -724,7 +657,7 @@ function setupGalleryScroll(){
         scrub:0.6, pin:true, anticipatePin:1, invalidateOnRefresh:true
       }
     });
-    // subtle depth parallax per card
+
     gsap.utils.toArray('.g-card').forEach((card,i)=>{
       gsap.fromTo(card, {opacity:.35, scale:.92}, {
         opacity:1, scale:1, ease:'none',
@@ -734,8 +667,6 @@ function setupGalleryScroll(){
         }
       });
     });
-    // the pinned gallery changes total page height — recalc every trigger
-    // below it on the page or their start/end points go stale and never fire
     ScrollTrigger.refresh();
   });
 }
@@ -760,10 +691,6 @@ musicBtn.addEventListener('click', ()=>{
   }
 });
 
-// Try to autoplay the moment the page loads. Browsers block unmuted
-// autoplay unless the user has already interacted with the page, so if
-// this fails we fall back to starting on the very first tap/click/scroll —
-// no button required, it just needs one touch anywhere on the page.
 function tryAutoplay(){
   const p = bgm.play();
   if(p && p.then){

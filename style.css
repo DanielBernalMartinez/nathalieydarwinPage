@@ -899,3 +899,55 @@ footer{
     max-width: 140px; /* Un tamaño un poco más compacto en teléfonos */
   }
 }
+/* Oculta esquinas florales del marco del Hero */
+.hero-frame .hf-corner,
+.corner-ornament {
+  display: none !important;
+}
+/* Ocultar las flores pequeñitas de las esquinas y los marcos */
+.corner-flowers,
+.frame-flower,
+.hf-corner use[href="#dfRose"] {
+  display: none !important;
+}
+/* 1. Ajustar el tamaño general del texto de la sección Hero */
+#hero .eyebrow {
+  font-size: 1.3rem !important; /* "RENOVACIÓN DE VOTOS" un poco más grande */
+}
+
+#hero .hero-sub {
+  font-size: 1.25rem !important; /* "Diez años después..." */
+}
+
+#hero .hero-tag {
+  font-size: 1.1rem !important; /* "CON SU FAMILIA..." */
+}
+
+/* 2. Cambiar color y tamaño de los nombres (Darwin y Nathalie) */
+.hero-names {
+  color: #5c3d2e !important; /* Tono café cálido / espresso que combina con el dorado */
+  font-size: 4.5rem !important; /* Aumenta el tamaño de la tipografía script */
+}
+#rsvp {
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.88)
+    ),
+    url('photos/photo-50-vegas.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#rsvp .rsvp-card, 
+#rsvp form {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(214, 178, 96, 0.4);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
