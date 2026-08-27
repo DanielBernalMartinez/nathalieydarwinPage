@@ -175,9 +175,9 @@ const stars = Array.from({length:STAR_COUNT},()=>({
 // floating flowers — small 5-petal blossoms drifting slowly across the page,
 // replacing the old constellations. Gold / pink / blue, per the new brief.
 const FLORAL_COLORS = ['214,178,96','224,140,165','90,150,214']; // gold, pink, blue
-const petals = Array.from({length:22},(_, i)=>({
+const petals = Array.from({length:12},(_, i)=>({
   x:Math.random(), y:Math.random(),
-  size:Math.random()*7+7,
+  size:Math.random()*5+5,
   rot:Math.random()*Math.PI*2,
   rotSpeed:(Math.random()-0.5)*0.006,
   driftPhase:Math.random()*Math.PI*2,
@@ -214,16 +214,16 @@ const NEBULA_COLORS = [
   '176,120,214', // orchid / lavender
   '224,150,170'  // soft rose (ties back to the accent palette)
 ];
-let nebulae = Array.from({length:16},(_, i)=>({
+let nebulae = Array.from({length:9},(_, i)=>({
   x:Math.random(), y:Math.random(),
-  r:Math.random()*200+260,
+  r:Math.random()*180+220,
   phase:Math.random()*Math.PI*2,
   speed:Math.random()*0.08+0.06,
   color: NEBULA_COLORS[i % NEBULA_COLORS.length]
 }));
 
 // bright sparkles — gold / pink / blue glints scattered across the page
-const SPARKLE_COUNT = 130;
+const SPARKLE_COUNT = 55;
 const SPARKLE_PALETTE2 = ['232,196,112','224,140,165','110,160,224'];
 const sparkles = Array.from({length:SPARKLE_COUNT},(_, i)=>({
   x:Math.random(), y:Math.random(),
@@ -257,8 +257,8 @@ function draw(){
 
   // nebulae — soft, clearly-visible colour clouds that breathe slowly
   nebulae.forEach(n=>{
-    const alpha = 0.095 + Math.sin(t*n.speed+n.phase)*0.04;
-    const a = Math.max(alpha, 0.025);
+    const alpha = 0.055 + Math.sin(t*n.speed+n.phase)*0.02;
+    const a = Math.max(alpha, 0.015);
     const g = ctx.createRadialGradient(n.x*W,n.y*H,0,n.x*W,n.y*H,n.r*DPR);
     g.addColorStop(0,   `rgba(${n.color},${a})`);
     g.addColorStop(0.45,`rgba(${n.color},${a*0.6})`);
@@ -273,7 +273,7 @@ function draw(){
     pt.y = (pt.y + pt.fallSpeed) % 1;
     const dx = Math.sin(t*pt.driftSpeed+pt.driftPhase)*0.04;
     const x = ((pt.x+dx)%1+1)%1;
-    drawFlower(x*W, pt.y*H, pt.size*DPR, pt.rot, pt.color, 0.55);
+    drawFlower(x*W, pt.y*H, pt.size*DPR, pt.rot, pt.color, 0.32);
   });
 
   // stars
@@ -288,8 +288,8 @@ function draw(){
   // bright gold sparkles — slow elegant glints, not a busy twinkle
   sparkles.forEach(sp=>{
     const pulse = Math.max(0, Math.sin(t*sp.speed+sp.phase));
-    if(pulse < 0.08) return; // mostly dormant, occasionally glints
-    drawSparkle(sp.x*W, sp.y*H, sp.size*DPR, pulse*0.95, sp.color);
+    if(pulse < 0.35) return; // dormant most of the time, occasional soft glint
+    drawSparkle(sp.x*W, sp.y*H, sp.size*DPR, pulse*0.55, sp.color);
   });
 
   requestAnimationFrame(draw);
@@ -474,7 +474,7 @@ function renderGallery(){
   const items = [
     ['photo-2.jpg','p2'],['photo-15.jpg','p15'],['photo-9.jpg','p9'],
     ['photo-3.jpg','p3'],['photo-8.jpg','p8'],['photo-10.jpg','p10'],
-    ['photo-1.jpg','p1'],['photo-5.jpg','p5'],['photo-7.jpg','p7'],['photo-12.jpg','p12'],
+    ['photo-1.jpg','p1'],['photo-5.jpg','p5'],['photo-12.jpg','p12'],
     ['photo-13.jpg','p13'],['photo-14.jpg','p14'],['photo-11.jpg','p11'],
     ['photo-20-fam.jpg','p20'],['photo-21-fam.jpg','p21'],['photo-22-fam.jpg','p22'],
     ['photo-23-fam.jpg','p23'],['photo-24-fam.jpg','p24'],['photo-25-fam.jpg','p25'],
