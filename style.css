@@ -951,3 +951,23 @@ footer{
   padding: 2.5rem 2rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
+/* Centrado forzado del contenedor de la imagen */
+.card, 
+.location-card, 
+.venue-card {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Centrado forzado de la imagen de la locación */
+.card img, 
+.location-card img, 
+.venue-card img {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: auto !important;
+}
