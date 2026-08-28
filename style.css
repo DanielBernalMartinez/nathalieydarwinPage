@@ -1036,3 +1036,42 @@ footer{
   font-weight: 400;
   margin: 0.4rem 0 1rem 0;
 }
+.developer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.developer-title {
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  color: #777;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.astranova-link-wrapper {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.astranova-link-wrapper:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.astranova-logo {
+  width: 180px; /* Tamaño ideal para legibilidad */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* Multiplica el fondo claro de la imagen con el lienzo para eliminar bordes */
+  mix-blend-mode: multiply; 
+}
