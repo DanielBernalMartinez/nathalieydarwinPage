@@ -985,7 +985,7 @@ footer{
 .section-header .section-eyebrow,
 .section-header [data-i18n="dress.eyebrow"] {
   color: #c59b27 !important; /* Dorado del sitio */
-  text-transform: uppercase !important;
+  text-transform: none !important;
   letter-spacing: 0.2em !important;
   font-size: 0.85rem !important;
   font-style: italic !important;
@@ -1024,7 +1024,7 @@ footer{
 .section-header .section-eyebrow,
 .section-header [data-i18n="dress.title"] {
   color: #c59b27 !important; /* Dorado elegante */
-  text-transform: uppercase !important;
+  text-transform: none !important;
   letter-spacing: 0.2em !important;
   font-size: 0.85rem !important;
   font-style: italic !important;
