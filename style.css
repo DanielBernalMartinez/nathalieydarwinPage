@@ -305,8 +305,9 @@ section::before{
 .program-time--sub{opacity:.35;}
 
 /* ---------- SECTION TITLES ---------- */
-.title-lg{font-size:clamp(2.2rem,5.5vw,4.2rem);text-align:center;}
+.title-lg{font-family:'Italiana',serif;font-size:clamp(1.6rem,3.6vw,2.4rem);text-align:center;font-weight:400;letter-spacing:.02em;}
 .title-md{font-family:'Italiana',serif;font-size:clamp(1.6rem,3.6vw,2.4rem);text-align:center;font-weight:400;letter-spacing:.02em;}
+.section-title{font-family:'Italiana',serif;font-size:clamp(1.6rem,3.6vw,2.4rem);text-align:center;font-weight:400;letter-spacing:.02em;}
 .program-subhead{margin-top:4rem;}
 .program-subhead .eyebrow{margin-bottom:.6rem;}
 .lead{
@@ -984,7 +985,7 @@ footer{
 /* Subtítulo pequeño (Dress Code / Código de vestimenta) */
 .section-header .section-eyebrow,
 .section-header [data-i18n="dress.eyebrow"] {
-  color: #c59b27 !important; /* Dorado del sitio */
+  color: #1a1a1a !important;
   text-transform: none !important;
   letter-spacing: 0.2em !important;
   font-size: 0.85rem !important;
@@ -996,9 +997,11 @@ footer{
 /* Título principal (Invitados) */
 .section-header .section-title,
 .section-header [data-i18n="dress.title"] {
-  font-size: 2.2rem !important;
-  font-weight: 300 !important;
-  color: #1a1a1a !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(1.6rem,3.6vw,2.4rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: .02em !important;
+  color: #c59b27 !important; /* Dorado del sitio */
   margin: 0 !important;
 }
 /* Contenedor del título centrado */
@@ -1011,11 +1014,13 @@ footer{
   margin: 2.5rem 0 1.5rem 0 !important;
 }
 
-/* Título principal (Código de vestimenta) - GRANDE */
+/* Título principal (Código de vestimenta) */
 .section-header .section-title,
 .section-header [data-i18n="dress.eyebrow"] {
-  font-size: 2.2rem !important;
-  font-weight: 300 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(1.6rem,3.6vw,2.4rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: .02em !important;
   color: #1a1a1a !important;
   margin: 0 0 0.4rem 0 !important;
 }
