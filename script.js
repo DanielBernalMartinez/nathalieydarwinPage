@@ -329,16 +329,20 @@ function artPhoto(file, captionKey, pos){
 const ART_CAPTIONS = {
   es:{
     p1:'Un brindis bajo el sol',p2:'Un atardecer para recordar',p3:'Aventuras en Disney',
-    p4:'Un beso en el reino mágico',p5:'Navidad juntos',p6:'Días de playa',p8:'Frente al castillo',p9:'Entre rosas',
-    p10:'Noche de crucero',p15:'Un beso en la gran ciudad',
+    p4:'Un beso en el reino mágico',p5:'Navidad juntos',p6:'Días de playa',
+    p7:'Aventura en familia',p8:'Frente al castillo',p9:'Entre rosas',
+    p10:'Noche de crucero',p11:'Bajo un cielo mágico',p12:'Noche especial en familia',
+    p13:'Un día para celebrar',p14:'Luces de diciembre',p15:'Un beso en la gran ciudad',
     p20:'Un día junto al lago',p21:'Celebrando en familia',p22:'Primer cumpleaños',
     p23:'Cumpleaños en casa',p24:'Un día de playa en familia',p25:'Celebrando su cumpleaños',
     p26:'Un atardecer en el castillo'
   },
   en:{
     p1:'A toast under the sun',p2:'A sunset to remember',p3:'Disney adventures',
-    p4:'A kiss in the magic kingdom',p5:'Christmas together',p6:'Beach days',p8:'In front of the castle',p9:'Among roses',
-    p10:'A night at sea', p15:'A kiss in the big city',
+    p4:'A kiss in the magic kingdom',p5:'Christmas together',p6:'Beach days',
+    p7:'A family adventure',p8:'In front of the castle',p9:'Among roses',
+    p10:'A night at sea',p11:'Under a magical sky',p12:'A special family night',
+    p13:'A day to celebrate',p14:'December lights',p15:'A kiss in the big city',
     p20:'A day by the lake',p21:'Celebrating together',p22:'First birthday',
     p23:'Birthday at home',p24:'A family beach day',p25:"Celebrating her birthday",
     p26:'Sunset at the castle'
@@ -561,6 +565,19 @@ window.addEventListener('DOMContentLoaded', ()=>{
       }
       window.addEventListener('load', ()=> ScrollTrigger.refresh());
       setTimeout(()=> ScrollTrigger.refresh(), 800);
+      setTimeout(()=> ScrollTrigger.refresh(), 2000);
+      {
+        const imgs = Array.from(document.images);
+        const pending = imgs.filter(img=>!img.complete);
+        if(pending.length){
+          let remaining = pending.length;
+          pending.forEach(img=>{
+            const done = ()=>{ remaining--; if(remaining<=0) ScrollTrigger.refresh(); };
+            img.addEventListener('load', done, {once:true});
+            img.addEventListener('error', done, {once:true});
+          });
+        }
+      }
     }catch(e){
       console.warn('Animation setup failed — showing content without animation.', e);
       forceRevealEverything();
@@ -568,6 +585,23 @@ window.addEventListener('DOMContentLoaded', ()=>{
   } else {
     forceRevealEverything();
   }
+
+  /* Safety net: no matter what happens with the scroll-triggered
+     animations above, guarantee every piece of content becomes
+     visible after a few seconds so nothing stays permanently hidden. */
+  setTimeout(()=>{
+    document.querySelectorAll(
+      '[data-reveal], .frame, .kid-card, .g-card, .detail-card, .dress-figure, '+
+      '.program-item, .map-frame-outer, .envelope-icon, .story-narrative p, .story-closer, .vow-line, '+
+      '.title-lg, .eyebrow'
+    ).forEach(el=>{
+      const opacity = window.getComputedStyle(el).opacity;
+      if(parseFloat(opacity) < 1){
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    });
+  }, 3500);
 
   document.querySelectorAll('#chapterNav button').forEach(b=>{
     b.addEventListener('click',()=>{
