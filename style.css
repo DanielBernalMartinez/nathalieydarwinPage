@@ -76,7 +76,6 @@ img{display:block;max-width:100%;}
 main{position:relative;z-index:3;}
 section{
   position:relative;
-  min-height:100vh;
   padding:min(14vw,140px) min(8vw,90px);
   display:flex;flex-direction:column;justify-content:center;
   overflow:hidden;
@@ -163,7 +162,7 @@ section::before{
 @keyframes eq{0%,100%{height:4px;}50%{height:14px;}}
 
 /* ---------- HERO ---------- */
-#hero{padding:0;justify-content:center;align-items:center;text-align:center;}
+#hero{padding:0;justify-content:center;align-items:center;text-align:center;min-height:100vh;}
 .hero-photo{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background-image:url('photos/photo-28-hero-new.jpg');
@@ -502,9 +501,7 @@ section::before{
   border-radius:2px;
 }
 .g-card::before{
-  content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);
-  width:34px;height:10px;border-radius:2px;
-  background:rgba(232,197,131,.55);z-index:2;
+  display:none;
 }
 .g-card .booth-flash{
   position:absolute;top:4px;right:4px;width:16px;height:16px;z-index:2;
@@ -515,6 +512,7 @@ section::before{
   font-size:.85rem;padding:1rem;letter-spacing:.05em;
 }
 .g-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.g-card .art-caption{display:none;}
 .g-tilt{flex:0 0 auto;}
 .g-tilt:nth-child(3n+1){transform:rotate(-2.2deg);}
 .g-tilt:nth-child(3n+2){transform:rotate(1.6deg);}
@@ -985,7 +983,7 @@ footer{
 /* Subtítulo pequeño (Dress Code / Código de vestimenta) */
 .section-header .section-eyebrow,
 .section-header [data-i18n="dress.eyebrow"] {
-  color: #1a1a1a !important;
+  color: #c59b27 !important; /* Dorado del sitio */
   text-transform: none !important;
   letter-spacing: 0.2em !important;
   font-size: 0.85rem !important;
@@ -997,11 +995,11 @@ footer{
 /* Título principal (Invitados) */
 .section-header .section-title,
 .section-header [data-i18n="dress.title"] {
-  font-family: 'Cormorant Garamond', serif !important;
+  font-family: 'Italiana', serif !important;
   font-size: clamp(1.6rem,3.6vw,2.4rem) !important;
   font-weight: 400 !important;
   letter-spacing: .02em !important;
-  color: #c59b27 !important; /* Dorado del sitio */
+  color: #1a1a1a !important;
   margin: 0 !important;
 }
 /* Contenedor del título centrado */
@@ -1017,7 +1015,7 @@ footer{
 /* Título principal (Código de vestimenta) */
 .section-header .section-title,
 .section-header [data-i18n="dress.eyebrow"] {
-  font-family: 'Cormorant Garamond', serif !important;
+  font-family: 'Italiana', serif !important;
   font-size: clamp(1.6rem,3.6vw,2.4rem) !important;
   font-weight: 400 !important;
   letter-spacing: .02em !important;
