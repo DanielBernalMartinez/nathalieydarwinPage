@@ -1078,3 +1078,90 @@ footer{
   /* Multiplica el fondo claro de la imagen con el lienzo para eliminar bordes */
   mix-blend-mode: multiply; 
 }
+/* =========================================================================
+   DECORACIÓN FLORAL — elementos reales (fotos/PNG con transparencia)
+   Añadido para replicar el diseño de referencia (hero, detalles, rsvp, sobres)
+   ========================================================================= */
+
+/* ---------- HERO: esquinas florales ---------- */
+.hero-corner-deco{position:absolute;inset:0;z-index:1;pointer-events:none;}
+.hcd{
+  position:absolute;width:clamp(120px,17vw,230px);height:auto;
+  opacity:.95;filter:drop-shadow(0 10px 20px rgba(60,45,20,.16));
+  mix-blend-mode:multiply;
+}
+.hcd--tl{top:-6px;left:-6px;}
+.hcd--tr{top:-6px;right:-6px;transform:scaleX(-1);}
+.hcd--bl{bottom:-6px;left:-6px;transform:scaleY(-1);}
+.hcd--br{bottom:-6px;right:-6px;transform:scale(-1,-1);}
+@media (max-width:640px){ .hcd{width:clamp(90px,30vw,150px);} }
+
+/* ---------- HERO: anillos con flores y cinta ---------- */
+.hero-rings-deco{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  margin:2rem auto 0;width:min(320px,82vw);height:96px;
+}
+.hrd-ribbon{position:absolute;width:100%;top:52%;left:0;transform:translateY(-50%);opacity:.9;z-index:1;}
+.hrd-rings{position:relative;z-index:2;width:clamp(56px,9vw,76px);height:auto;filter:drop-shadow(0 6px 12px rgba(60,45,20,.28));}
+.hrd-rose{position:absolute;top:50%;transform:translateY(-50%);width:clamp(50px,8vw,70px);height:auto;z-index:2;
+  filter:drop-shadow(0 6px 10px rgba(60,45,20,.18));}
+.hrd-rose--left{left:2%;}
+.hrd-rose--right{right:2%;}
+
+/* ---------- DETAILS: rosas grandes en las esquinas ---------- */
+.details-corner-deco{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.dcd{
+  position:absolute;top:-10px;width:clamp(110px,15vw,190px);height:auto;
+  opacity:.95;filter:drop-shadow(0 8px 16px rgba(60,45,20,.15));
+}
+.dcd--tl{left:-8px;}
+.dcd--tr{right:-8px;transform:scaleX(-1);}
+@media (max-width:640px){ .dcd{width:clamp(80px,26vw,120px);opacity:.85;} }
+
+.details-heart-divider{
+  display:block;width:clamp(140px,20vw,220px);height:auto;
+  margin:.4rem auto 1.6rem;opacity:.9;
+}
+
+/* ---------- DETAILS: rosas asomando en las tarjetas ---------- */
+.card-corner-flower{
+  position:absolute;width:clamp(46px,7vw,66px);height:auto;z-index:0;
+  pointer-events:none;filter:drop-shadow(0 6px 10px rgba(60,45,20,.15));
+}
+.ccf--tl{top:-16px;left:-14px;}
+.ccf--tr{top:-16px;right:-14px;}
+.ccf--br{bottom:-16px;right:-14px;}
+.detail-card{overflow:visible;}
+.detail-card h3, .detail-card .detail-main, .detail-card .detail-sub, .detail-card .card-icon-img{position:relative;z-index:1;}
+
+/* ---------- DETAILS: iconos reales en las tarjetas ---------- */
+.detail-card .card-icon-img{
+  width:36px;height:auto;margin:0 auto 1.1rem;display:block;
+}
+
+/* ---------- RSVP: moños y cinta decorativos ---------- */
+.rsvp-corner-bow{
+  position:absolute;top:5%;width:clamp(48px,6.5vw,72px);height:auto;
+  opacity:.85;pointer-events:none;z-index:1;
+}
+.rsvp-corner-bow--left{left:5%;}
+.rsvp-corner-bow--right{right:5%;transform:scaleX(-1);}
+.rsvp-corner-ribbon{
+  position:absolute;bottom:2%;left:-4%;width:clamp(150px,24vw,260px);height:auto;
+  opacity:.75;pointer-events:none;z-index:1;transform:rotate(-4deg);
+}
+@media (max-width:640px){ .rsvp-corner-bow{opacity:.6;} .rsvp-corner-ribbon{opacity:.5;width:180px;} }
+
+/* ---------- SOBRES: foto completa del sobre con flores ---------- */
+#envelopes .envelope-scene--photo{width:min(420px,86vw);margin-bottom:1.8rem;}
+.envelope-photo{
+  width:100%;height:auto;display:block;
+  filter:drop-shadow(0 18px 30px rgba(60,45,20,.28));
+  animation:envFloat 4.5s ease-in-out infinite;
+}
+.env-bg-sparkle{
+  position:absolute;width:clamp(90px,14vw,150px);height:auto;opacity:.5;
+  pointer-events:none;z-index:0;
+}
+.env-bg-sparkle--1{top:4%;right:4%;}
+.env-bg-sparkle--2{bottom:8%;left:4%;}
