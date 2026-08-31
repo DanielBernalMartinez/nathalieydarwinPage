@@ -1083,39 +1083,40 @@ footer{
    Añadido para replicar el diseño de referencia (hero, detalles, rsvp, sobres)
    ========================================================================= */
 
-/* ---------- HERO: esquinas florales ---------- */
+/* ---------- HERO: esquinas florales (solo abajo, grandes) ---------- */
 .hero-corner-deco{position:absolute;inset:0;z-index:1;pointer-events:none;}
 .hcd{
-  position:absolute;width:clamp(120px,17vw,230px);height:auto;
+  position:absolute;width:clamp(150px,24vw,320px);height:auto;
   opacity:.95;filter:drop-shadow(0 10px 20px rgba(60,45,20,.16));
   mix-blend-mode:multiply;
 }
-.hcd--tl{top:-6px;left:-6px;}
-.hcd--tr{top:-6px;right:-6px;transform:scaleX(-1);}
-.hcd--bl{bottom:-6px;left:-6px;transform:scaleY(-1);}
-.hcd--br{bottom:-6px;right:-6px;transform:scale(-1,-1);}
-@media (max-width:640px){ .hcd{width:clamp(90px,30vw,150px);} }
+.hcd--bl{bottom:-10px;left:-10px;transform:scaleY(-1);}
+.hcd--br{bottom:-10px;right:-10px;transform:scale(-1,-1);}
+@media (max-width:640px){ .hcd{width:clamp(110px,38vw,190px);} }
 
-/* ---------- HERO: anillos con flores y cinta ---------- */
+/* ---------- HERO: anillos con flores y cinta (bajo los nombres) ---------- */
 .hero-rings-deco{
   position:relative;display:flex;align-items:center;justify-content:center;
-  margin:2rem auto 0;width:min(320px,82vw);height:96px;
+  margin:1rem auto 1.3rem;width:min(300px,72vw);height:100px;z-index:2;
 }
-.hrd-ribbon{position:absolute;width:100%;top:52%;left:0;transform:translateY(-50%);opacity:.9;z-index:1;}
-.hrd-rings{position:relative;z-index:2;width:clamp(56px,9vw,76px);height:auto;filter:drop-shadow(0 6px 12px rgba(60,45,20,.28));}
-.hrd-rose{position:absolute;top:50%;transform:translateY(-50%);width:clamp(50px,8vw,70px);height:auto;z-index:2;
+.hrd-ribbon{position:absolute;width:104%;top:54%;left:50%;transform:translate(-50%,-50%);opacity:.92;z-index:1;}
+.hrd-rings{position:relative;z-index:2;width:clamp(96px,15vw,132px);height:auto;filter:drop-shadow(0 6px 12px rgba(60,45,20,.28));}
+.hrd-rose{position:absolute;top:56%;transform:translateY(-50%);width:clamp(72px,11.5vw,102px);height:auto;z-index:2;
   filter:drop-shadow(0 6px 10px rgba(60,45,20,.18));}
-.hrd-rose--left{left:2%;}
-.hrd-rose--right{right:2%;}
+.hrd-rose--left{left:-8%;}
+.hrd-rose--right{right:-8%;}
+@media (max-width:640px){ .hero-rings-deco{height:80px;margin:.7rem auto 1rem;} }
 
-/* ---------- DETAILS: rosas grandes en las esquinas ---------- */
-.details-corner-deco{position:absolute;inset:0;z-index:0;pointer-events:none;}
+/* ---------- DETAILS: rosas grandes en las esquinas (arriba y abajo) ---------- */
+.details-corner-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:visible;}
 .dcd{
-  position:absolute;top:-10px;width:clamp(110px,15vw,190px);height:auto;
+  position:absolute;width:clamp(110px,15vw,190px);height:auto;
   opacity:.95;filter:drop-shadow(0 8px 16px rgba(60,45,20,.15));
 }
-.dcd--tl{left:-8px;}
-.dcd--tr{right:-8px;transform:scaleX(-1);}
+.dcd--tl{top:-10px;left:-8px;}
+.dcd--tr{top:-10px;right:-8px;transform:scaleX(-1);}
+.dcd--bl{bottom:-10px;left:-8px;transform:scaleY(-1);}
+.dcd--br{bottom:-10px;right:-8px;transform:scale(-1,-1);}
 @media (max-width:640px){ .dcd{width:clamp(80px,26vw,120px);opacity:.85;} }
 
 .details-heart-divider{
@@ -1123,15 +1124,15 @@ footer{
   margin:.4rem auto 1.6rem;opacity:.9;
 }
 
-/* ---------- DETAILS: rosas asomando en las tarjetas ---------- */
+/* ---------- DETAILS: ramillete floral dentro de cada tarjeta ---------- */
 .card-corner-flower{
-  position:absolute;width:clamp(46px,7vw,66px);height:auto;z-index:0;
-  pointer-events:none;filter:drop-shadow(0 6px 10px rgba(60,45,20,.15));
+  position:absolute;width:clamp(100px,16vw,150px);height:auto;z-index:0;
+  pointer-events:none;opacity:.92;
 }
-.ccf--tl{top:-16px;left:-14px;}
-.ccf--tr{top:-16px;right:-14px;}
-.ccf--br{bottom:-16px;right:-14px;}
-.detail-card{overflow:visible;}
+.ccf--tl{top:-6px;left:-6px;}
+.ccf--tr{top:-6px;right:-6px;transform:scaleX(-1);}
+.ccf--br{bottom:-6px;right:-6px;transform:scale(-1,-1);}
+.detail-card{overflow:hidden;}
 .detail-card h3, .detail-card .detail-main, .detail-card .detail-sub, .detail-card .card-icon-img{position:relative;z-index:1;}
 
 /* ---------- DETAILS: iconos reales en las tarjetas ---------- */
@@ -1165,3 +1166,62 @@ footer{
 }
 .env-bg-sparkle--1{top:4%;right:4%;}
 .env-bg-sparkle--2{bottom:8%;left:4%;}
+
+/* ---------- Ocultar todos los destellos/puntos decorativos del sitio ---------- */
+.corner-sparkles,
+.hf-sparkle,
+.env-sparkle,
+.frame-sparkle,
+.env-bg-sparkle{
+  display:none !important;
+}
+
+/* =========================================================================
+   CLOSING — decoración floral completa de cierre
+   ========================================================================= */
+
+/* Esquinas florales grandes enmarcando todo el cierre */
+.closing-corner-deco{position:absolute;inset:0;z-index:0;pointer-events:none;}
+
+/* Moño dorado arriba, reemplaza el mini-bow de líneas */
+.closing-top-bow{
+  display:block;width:clamp(56px,7vw,76px);height:auto;
+  margin:0 auto 1.2rem;opacity:.92;
+}
+
+/* Ramitas floreadas flanqueando "Darwin & Nathalie" */
+.closing-names-row{
+  display:flex;align-items:center;justify-content:center;gap:clamp(.5rem,3vw,2rem);
+  margin-top:2.2rem;flex-wrap:wrap;
+}
+.closing-names-row .closing-names{margin-top:0;}
+.closing-sprig{width:clamp(56px,8vw,100px);height:auto;opacity:.9;
+  filter:drop-shadow(0 6px 10px rgba(60,45,20,.15));}
+.closing-sprig--left{transform:scaleX(-1) rotate(8deg);}
+.closing-sprig--right{transform:rotate(8deg);}
+@media (max-width:640px){ .closing-sprig{width:56px;} }
+
+/* Anillos flotando sobre el divisor floral */
+.closing-rings-divider{position:relative;display:flex;justify-content:center;margin-top:2.6rem;}
+.closing-rings-img{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:clamp(50px,7vw,68px);height:auto;
+  filter:drop-shadow(0 6px 10px rgba(60,45,20,.25));
+}
+
+/* Bloque AstraNova con divisor de corazón y hojas laterales */
+.developer-divider{
+  display:block;width:clamp(110px,16vw,170px);height:auto;
+  margin:0 auto .6rem;opacity:.85;
+}
+.astranova-row{display:flex;align-items:center;justify-content:center;gap:.6rem;}
+.developer-leaf{width:clamp(34px,5vw,52px);height:auto;opacity:.85;}
+.developer-leaf--left{transform:scaleX(-1);}
+
+/* Cinta decorativa detrás del texto del footer */
+footer{overflow:visible;}
+.footer-ribbon{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:min(320px,90vw);max-width:360px;opacity:.35;z-index:0;pointer-events:none;
+}
+.footer-text-inner{position:relative;z-index:1;}

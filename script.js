@@ -171,7 +171,7 @@ function resize(){
 resize();
 window.addEventListener('resize', resize);
 
-const STAR_COUNT = 220;
+const STAR_COUNT = 0;
 const SPARKLE_PALETTE = ['43,38,32', '184,146,90', '167,197,218', '227,170,176']; // ink, gold, blue, rose
 const stars = Array.from({length:STAR_COUNT},()=>({
   x:Math.random(), y:Math.random(),
@@ -200,7 +200,7 @@ let nebulae = Array.from({length:9},(_, i)=>({
 }));
 
 // bright sparkles — gold / pink / blue glints scattered across the page
-const SPARKLE_COUNT = 55;
+const SPARKLE_COUNT = 0;
 const SPARKLE_PALETTE2 = ['232,196,112','224,140,165','110,160,224'];
 const sparkles = Array.from({length:SPARKLE_COUNT},(_, i)=>({
   x:Math.random(), y:Math.random(),
