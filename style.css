@@ -1191,15 +1191,21 @@ footer{
 
 /* Ramitas floreadas flanqueando "Darwin & Nathalie" */
 .closing-names-row{
-  display:flex;align-items:center;justify-content:center;gap:clamp(.5rem,3vw,2rem);
-  margin-top:2.2rem;flex-wrap:wrap;
+  position:relative;display:block;text-align:center;
+  margin-top:2.2rem;padding:0 clamp(50px,12vw,120px);
 }
 .closing-names-row .closing-names{margin-top:0;}
-.closing-sprig{width:clamp(56px,8vw,100px);height:auto;opacity:.9;
-  filter:drop-shadow(0 6px 10px rgba(60,45,20,.15));}
-.closing-sprig--left{transform:scaleX(-1) rotate(8deg);}
-.closing-sprig--right{transform:rotate(8deg);}
-@media (max-width:640px){ .closing-sprig{width:56px;} }
+.closing-sprig{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:clamp(46px,7vw,90px);height:auto;opacity:.9;
+  filter:drop-shadow(0 6px 10px rgba(60,45,20,.15));
+}
+.closing-sprig--left{left:0;transform:translateY(-50%) scaleX(-1) rotate(8deg);}
+.closing-sprig--right{right:0;transform:translateY(-50%) rotate(8deg);}
+@media (max-width:640px){
+  .closing-names-row{padding:0 44px;}
+  .closing-sprig{width:42px;}
+}
 
 /* Anillos flotando sobre el divisor floral */
 .closing-rings-divider{position:relative;display:flex;justify-content:center;margin-top:2.6rem;}
